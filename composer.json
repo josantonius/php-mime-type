@@ -1,0 +1,45 @@
+{
+    "name":        "josantonius/mimetype",
+    "version":     "1.0.0",
+    "type":        "library",
+    "description": "PHP library for obtain headers MIME.",
+    "keywords": [
+        "MimeType",
+        "HHVM",
+        "MIME",
+        "audio",
+        "video",
+        "multipart",
+        "aplication",
+        "PHP"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name":     "Josantonius",
+            "email":    "info@josantonius.com",
+            "homepage": "https://github.com/josantonius",
+            "role":     "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable" : true,
+    "require": {
+        "php" : ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Josantonius\\MimeType\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Josantonius\\MimeType\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
