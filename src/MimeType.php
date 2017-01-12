@@ -80,7 +80,7 @@ class MimeType {
      *
      * @since 1.0.0
      *
-     * @param  $ext string → MIME type, e.g. "text/html"
+     * @param  $mime string → MIME type, e.g. "text/html"
      *
      * @throws MimeTypeException → MIME type not found
      * @return string            → file extension
