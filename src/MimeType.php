@@ -1,4 +1,4 @@
-<?php declare(strict_types=1);
+<?php
 /**
  * PHP library for obtain headers MIME.
  * 
@@ -40,7 +40,7 @@ class MimeType {
      *
      * @return array → MIME types
      */
-    protected static function load(): array {
+    protected static function load() {
 
         if (is_null(static::$mimeTypes)) {
 
@@ -68,11 +68,11 @@ class MimeType {
      * @throws MimeTypeException → file extension not found
      * @return string            → MIME type
      */
-    public static function getMimeFromExtension(string $ext): string {
+    public static function getMimeFromExtension($ext) {
 
         static::load();
 
-        return static::$mimeTypes[$ext] ?? "undefined";
+        return (isset(static::$mimeTypes[$ext]) ? static::$mimeTypes[$ext] : "undefined");
     }
 
     /**
@@ -85,7 +85,7 @@ class MimeType {
      * @throws MimeTypeException → MIME type not found
      * @return string            → file extension
      */
-    public static function getExtensionFromMime(string $mime): string {
+    public static function getExtensionFromMime($mime) {
 
         static::load();
 
