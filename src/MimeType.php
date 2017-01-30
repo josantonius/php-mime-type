@@ -104,7 +104,7 @@ class MimeType {
      *
      * @return array → MIME types
      */
-    public static function getAll(): array {
+    public static function getAll() {
         
         return static::load();
     }
