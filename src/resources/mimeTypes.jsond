@@ -1,15 +1,15 @@
 {
    "_comments": {
-        "_title"     : "Full list of 683 MIME Types",
+        "_title"     : "Full list of 684 MIME Types",
         "_category"  : "JST",
         "_package"   : "MimeType",
         "_subpackage": "Json",
         "_author"    : "Josantonius - info@josantonius.com",
         "_copyright" : "Copyright (c) 2016 JST PHP Framework",
         "_license"   : "http://opensource.org/licenses/MIT - The MIT License (MIT)",
-        "_version"   : "1.0.0",
+        "_version"   : "1.1.0",
         "_link"      : "http://github.com/josantonius/PHP-MimeType",
-        "_since"     : "File available since 1.0.0 - Update: 2016-12-19",
+        "_since"     : "File available since 1.0.0 - Update: 2017-01-31",
         "_comment"   : "Compiled from http://www.freeformatter.com/mime-types-list.html"
     },
     
