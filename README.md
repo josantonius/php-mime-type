@@ -30,7 +30,7 @@ To install PHP MimeType library, simply:
 
     $ composer require Josantonius/MimeType
 
-The previous command will only install the necessary files, if you prefer to download the entire source, including tests, you can use:
+The previous command will only install the necessary files, if you prefer to download the entire source code (including tests, vendor folder, exceptions not used, docs...) you can use:
 
     $ composer require Josantonius/MimeType --prefer-source
 
