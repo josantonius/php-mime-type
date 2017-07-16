@@ -11,8 +11,6 @@
 
 namespace Josantonius\MimeType;
 
-# use Josantonius\MimeType\Exception\MimeTypeException;
-
 /**
  * Get MIME type and file extensions.
  *
@@ -38,20 +36,20 @@ class MimeType {
      */
     protected static function load() {
 
-        if (is_null(static::$mimeTypes)) {
+        if (is_null(self::$mimeTypes)) {
 
-            $filepath = __DIR__ . "/resources/mimeTypes.jsond";
+            $filepath = __DIR__ . '/resources/mimeTypes.jsond';
 
             $jsonFile  = file_get_contents($filepath);
 
             $mimeTypes = json_decode($jsonFile, true);
 
-            static::$mimeTypes = $mimeTypes['data'];
+            self::$mimeTypes = $mimeTypes['data'];
 
             unset($mimeTypes);
         }
 
-        return static::$mimeTypes;
+        return self::$mimeTypes;
     }
 
     /**
@@ -59,16 +57,16 @@ class MimeType {
      *
      * @since 1.0.0
      *
-     * @param string $ext → file extension, e.g. ".html"
+     * @param string $ext → file extension, e.g. '.html'
      *
      * @throws MimeTypeException → file extension not found
      * @return string            → MIME type
      */
     public static function getMimeFromExtension($ext) {
 
-        static::load();
+        self::load();
 
-        return (isset(static::$mimeTypes[$ext]) ? static::$mimeTypes[$ext] : "undefined");
+        return (isset(self::$mimeTypes[$ext]) ? self::$mimeTypes[$ext] : 'undefined');
     }
 
     /**
@@ -76,21 +74,21 @@ class MimeType {
      *
      * @since 1.0.0
      *
-     * @param string $mime → MIME type, e.g. "text/html"
+     * @param string $mime → MIME type, e.g. 'text/html'
      *
      * @throws MimeTypeException → MIME type not found
      * @return string            → file extension
      */
     public static function getExtensionFromMime($mime) {
 
-        static::load();
+        self::load();
 
-        if ($index = array_search($mime, static::$mimeTypes)) {
+        if ($index = array_search($mime, self::$mimeTypes)) {
 
             return $index;
         }
 
-        return "undefined";
+        return 'undefined';
     }
 
     /**
@@ -102,6 +100,6 @@ class MimeType {
      */
     public static function getAll() {
         
-        return static::load();
+        return self::load();
     }
 }

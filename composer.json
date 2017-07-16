@@ -1,6 +1,6 @@
 {
     "name":        "josantonius/mimetype",
-    "version":     "1.1.1",
+    "version":     "1.1.2",
     "type":        "library",
     "description": "PHP library for obtain headers MIME.",
     "keywords": [
