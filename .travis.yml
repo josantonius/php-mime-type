@@ -15,10 +15,13 @@ php:
   - nightly
 
 matrix:
+  include:
+    - dist: precise
+      php: 5.5
   fast_finish: true
   allow_failures:
-    - php: hhvm
-    
+    - php: nightly
+
 before_script:
   - composer self-update
   - composer install
