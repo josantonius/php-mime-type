@@ -45,7 +45,7 @@ The previous command will only install the necessary files, if you prefer to dow
 
 Or you can also clone the complete repository with Git:
 
-  $ git clone https://github.com/Josantonius/PHP-MimeType.git
+    $ git clone https://github.com/Josantonius/PHP-MimeType.git
 
 ### Requirements
 
@@ -83,7 +83,7 @@ echo "[.json] → " . MimeType::getMimeFromExtension('.json'); // [.json] → ap
 
 echo "[text/html] → " . MimeType::getExtensionFromMime('text/html'); // [text/html] → .html
 
-echo MimeType::getAll();
+var_dump(MimeType::get());
 
 /*
 array(682) {
@@ -113,26 +113,13 @@ array(682) {
 
 ### Tests 
 
-To use the [test](tests) class, simply:
+To run unit [tests](tests/MimeType), simply:
 
-```php
-<?php
-$loader = require __DIR__ . '/vendor/autoload.php';
+    $ git clone https://github.com/Josantonius/PHP-MimeType.git
+    
+    $ cd PHP-MimeType
 
-$loader->addPsr4('Josantonius\\MimeType\\Tests\\', __DIR__ . '/vendor/josantonius/mimetype/tests');
-
-use Josantonius\MimeType\Tests\MimeTypeTest;
-
-```
-Available test methods in this library:
-
-```php
-MimeTypeTest::testGetMimeFromExtension();
-MimeTypeTest::testGetMimeFromExtensionUndefined();
-MimeTypeTest::testGetExtensionFromMime();
-MimeTypeTest::testGetExtensionFromMimeUndefined();
-MimeTypeTest::testGetAll();
-```
+    $ phpunit
 
 ### Contribute
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.

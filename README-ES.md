@@ -65,9 +65,9 @@ use Josantonius\MimeType\MimeType;
 Métodos disponibles en esta biblioteca:
 
 ```php
+MimeType::get();
 MimeType::getMimeFromExtension();
 MimeType::getExtensionFromMime();
-MimeType::getAll();
 ```
 ### Uso
 
@@ -83,7 +83,7 @@ echo "[.json] → " . MimeType::getMimeFromExtension('.json'); // [.json] → ap
 
 echo "[text/html] → " . MimeType::getExtensionFromMime('text/html'); // [text/html] → .html
 
-echo MimeType::getAll();
+var_dump(MimeType::get());
 
 /*
 array(682) {
@@ -113,25 +113,13 @@ array(682) {
 
 ### Tests 
 
-Para utilizar la clase de [pruebas](tests), simplemente:
+Para ejecutar las [pruebas](tests/MimeType) unitarias, simplemente:
 
-```php
-<?php
-$loader = require __DIR__ . '/vendor/autoload.php';
+    $ git clone https://github.com/Josantonius/PHP-MimeType.git
+    
+    $ cd PHP-MimeType
 
-$loader->addPsr4('Josantonius\\MimeType\\Tests\\', __DIR__ . '/vendor/josantonius/mimetype/tests');
-
-use Josantonius\MimeType\Tests\MimeTypeTest;
-```
-Métodos de prueba disponibles en esta biblioteca:
-
-```php
-MimeTypeTest::testGetMimeFromExtension();
-MimeTypeTest::testGetMimeFromExtensionUndefined();
-MimeTypeTest::testGetExtensionFromMime();
-MimeTypeTest::testGetExtensionFromMimeUndefined();
-MimeTypeTest::testGetAll();
-```
+    $ phpunit
 
 ### Contribuir
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
