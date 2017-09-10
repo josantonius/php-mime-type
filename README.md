@@ -65,9 +65,9 @@ use Josantonius\MimeType\MimeType;
 Available methods in this library:
 
 ```php
+MimeType::get();
 MimeType::getMimeFromExtension();
 MimeType::getExtensionFromMime();
-MimeType::getAll();
 ```
 ### Usage
 

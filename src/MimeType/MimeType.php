@@ -28,25 +28,17 @@ class MimeType {
     public static $mimeTypes;
 
     /**
-     * Load Jsond file with MIME types.
+     * Get Jsond file with MIME types and return array.
      *
-     * @since 1.0.0
+     * @since 1.1.3
      *
      * @return array → MIME types
      */
-    protected static function load() {
+    public static function get() {
 
-        if (is_null(self::$mimeTypes)) {
+        if (!self::$mimeTypes) {
 
-            $filepath = __DIR__ . '/resources/mimeTypes.jsond';
-
-            $jsonFile  = file_get_contents($filepath);
-
-            $mimeTypes = json_decode($jsonFile, true);
-
-            self::$mimeTypes = $mimeTypes['data'];
-
-            unset($mimeTypes);
+            self::$mimeTypes = self::_getFromFile();
         }
 
         return self::$mimeTypes;
@@ -59,14 +51,13 @@ class MimeType {
      *
      * @param string $ext → file extension, e.g. '.html'
      *
-     * @throws MimeTypeException → file extension not found
-     * @return string            → MIME type
+     * @return string|false → MIME type or false
      */
     public static function getMimeFromExtension($ext) {
 
-        self::load();
+        self::get();
 
-        return (isset(self::$mimeTypes[$ext]) ? self::$mimeTypes[$ext] : 'undefined');
+        return isset(self::$mimeTypes[$ext]) ? self::$mimeTypes[$ext] : false;
     }
 
     /**
@@ -76,30 +67,30 @@ class MimeType {
      *
      * @param string $mime → MIME type, e.g. 'text/html'
      *
-     * @throws MimeTypeException → MIME type not found
-     * @return string            → file extension
+     * @return string|false → file extension or false
      */
     public static function getExtensionFromMime($mime) {
 
-        self::load();
+        self::get();
 
-        if ($index = array_search($mime, self::$mimeTypes)) {
-
-            return $index;
-        }
-
-        return 'undefined';
+        return array_search($mime, self::$mimeTypes);
     }
 
     /**
-     * Get all MIME types as array.
+     * Get MIME types fron Jsond file.
      *
-     * @since 1.0.0
+     * @since 1.1.3
      *
      * @return array → MIME types
      */
-    public static function getAll() {
-        
-        return self::load();
+    private static function _getFromFile() {
+
+        $filepath = dirname(dirname(__FILE__)) . '/resources/mimeTypes.jsond';
+
+        $jsonFile  = file_get_contents($filepath);
+
+        $mimeTypes = json_decode($jsonFile, true);
+
+        return $mimeTypes['data'];
     }
 }
