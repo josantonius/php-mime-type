@@ -4,6 +4,8 @@
 
 * Unit tests supported by `PHPUnit` were added.
 
+* The repository was synchronized with Travis CI to implement continuous integration.
+
 * Deleted `Josantonius\MimeType\MimeType::load()` method.
 * Deleted `Josantonius\MimeType\MimeType::getAll()` method.
 
