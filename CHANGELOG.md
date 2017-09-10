@@ -9,11 +9,21 @@
 
 * Added `Josantonius\MimeType\MimeType::get()` method.
 
-* Deleted `Josantonius\MimeType\Tests\MimeTypeTest::testGetAll()` method.
-
 * Added `Josantonius\MimeType\MimeType::get()` method.
 
-* Added `Josantonius\MimeType\Tests\MimeTypeTest::_getFromFile()` method.
+* Deleted `Josantonius\MimeType\Tests\MimeTypeTest` class.
+* Deleted `Josantonius\MimeType\Tests\MimeTypeTest::testGetMimeFromExtension()` method.
+* Deleted `Josantonius\MimeType\Tests\MimeTypeTest::testGetMimeFromExtensionUndefined()` method.
+* Deleted `Josantonius\MimeType\Tests\MimeTypeTest::testGetExtensionFromMime()` method.
+* Deleted `Josantonius\MimeType\Tests\MimeTypeTest::testGetExtensionFromMimeUndefined()` method.
+* Deleted `Josantonius\MimeType\Tests\MimeTypeTest::testGetAll()` method.
+
+* Added `Josantonius\MimeType\Test\MimeTypeTest::_getFromFile()` method.
+* Added `Josantonius\MimeType\Test\MimeTypeTest` class.
+* Added `Josantonius\MimeType\Test\MimeTypeTest::testGetMimeFromExtension()` method.
+* Added `Josantonius\MimeType\Test\MimeTypeTest::testGetMimeFromExtensionUndefined()` method.
+* Added `Josantonius\MimeType\Test\MimeTypeTest::testGetExtensionFromMime()` method.
+* Added `Josantonius\MimeType\Test\MimeTypeTest::testGetExtensionFromMimeUndefined()` method.
 
 * Added `MimeType/src/bootstrap.php` file
 
