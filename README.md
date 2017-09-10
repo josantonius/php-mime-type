@@ -113,7 +113,7 @@ array(682) {
 
 ### Tests 
 
-To run unit [tests](tests/MimeType), simply:
+To run [tests](tests/MimeType) simply:
 
     $ git clone https://github.com/Josantonius/PHP-MimeType.git
     

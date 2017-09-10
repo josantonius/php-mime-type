@@ -114,7 +114,7 @@ array(682) {
 
 ### Tests 
 
-Para ejecutar las [pruebas](tests/MimeType) unitarias, simplemente:
+Para ejecutar las [pruebas](tests/MimeType) simplemente:
 
     $ git clone https://github.com/Josantonius/PHP-MimeType.git
     
