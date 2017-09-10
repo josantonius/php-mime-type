@@ -19,7 +19,7 @@ use Josantonius\MimeType\MimeType,
  *
  * @since 1.0.0
  */
-class MimeTypeTest extends TestCase { 
+final class MimeTypeTest extends TestCase { 
 
     /**
      * Get Jsond file with MIME types and return array.
