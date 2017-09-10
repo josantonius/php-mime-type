@@ -11,4 +11,4 @@
 
 $loader = require __DIR__ . '/../src/bootstrap.php';
 
-$loader->add('Josantonius\MimeType\Tests', __DIR__);
+$loader->add('Josantonius\MimeType\Test', __DIR__);
