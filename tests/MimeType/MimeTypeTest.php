@@ -11,14 +11,15 @@
 
 namespace Josantonius\MimeType\Tests;
 
-use Josantonius\MimeType\MimeType;
+use Josantonius\MimeType\MimeType,
+    PHPUnit\Framework\TestCase;
 
 /**
  * Tests class for MimeType library.
  *
  * @since 1.0.0
  */
-final class MimeTypeTest extends \PHPUnit_Framework_TestCase { 
+final class MimeTypeTest extends TestCase { 
 
     /**
      * Get Jsond file with MIME types and return array.
