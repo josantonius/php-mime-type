@@ -22,16 +22,6 @@ PHP library for obtain headers MIME.
 
 ---
 
-<p align="center"><strong>Take a look at the code</strong></p>
-
-<p align="center">
-  <a href="https://youtu.be/h3Hrk8zxvA0" title="Take a look at the code">
-    <img src="https://raw.githubusercontent.com/Josantonius/PHP-Algorithm/master/resources/youtube-thumbnail.jpg">
-  </a>
-</p>
-
----
-
 ### Installation
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
@@ -147,7 +137,7 @@ This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file 
 
 ### Copyright
 
-2017 Josantonius, [josantonius.com](https://josantonius.com/)
+2016 -2017 Josantonius, [josantonius.com](https://josantonius.com/)
 
 If you find it useful, let me know :wink:
 
