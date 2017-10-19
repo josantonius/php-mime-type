@@ -8,7 +8,7 @@
         "HHVM",
         "MIME",
         "audio",
-        "video",
+        "video", 
         "multipart",
         "aplication",
         "PHP"
