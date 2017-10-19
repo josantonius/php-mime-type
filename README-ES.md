@@ -60,11 +60,9 @@ MimeType::get();
 
 Obtener array con todos los tipos de MIME.
 
-**- return** (void)
+**# Return** (void)
 
 ---
-
-#### · getMimeFromExtension()
 
 ```php
 MimeType::getMimeFromExtension($ext);
@@ -76,24 +74,21 @@ Obtener tipo de MIME desde extensión de archivo.
 | --- | --- | --- | --- |
 | $ext | File extension | string | Yes |
 
-**- return** (string|false) → MIME type o false.
+**# Return** (string|false) → MIME type o false.
 
 ---
-
-#### · getExtensionFromMime()
-
-Obtener extensión de archivo desde tipo de MIME.
 
 ```php
 MimeType::getExtensionFromMime($mime);
 ```
+
+Obtener extensión de archivo desde tipo de MIME.
+
 | Atributo | Descripción | Tipo | Requerido
 | --- | --- | --- | --- |
 | $mime | MIME type | string | Yes |
 
-**- return** (string|false) → Extensión de archivo o false.
-
----
+**# Return** (string|false) → Extensión de archivo o false.
 
 ### Uso
 
