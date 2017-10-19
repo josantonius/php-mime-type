@@ -54,32 +54,29 @@ use Josantonius\MimeType\MimeType;
 
 ### Métodos disponibles
 
----
-
-#### · get()
-
-Obtener array con todos los tipos de MIME.
-
 ```php
 MimeType::get();
 ```
 
-**# RETURN**  **(** void **)**
+Obtener array con todos los tipos de MIME.
+
+**- return** (void)
 
 ---
 
 #### · getMimeFromExtension()
 
-Obtener tipo de MIME desde extensión de archivo.
-
 ```php
 MimeType::getMimeFromExtension($ext);
 ```
+
+Obtener tipo de MIME desde extensión de archivo.
+
 | Atributo | Descripción | Tipo | Requerido
 | --- | --- | --- | --- |
 | $ext | File extension | string | Yes |
 
-**# RETURN** **(** string **|** false **)** → MIME type o false.
+**- return** (string|false) → MIME type o false.
 
 ---
 
@@ -94,7 +91,7 @@ MimeType::getExtensionFromMime($mime);
 | --- | --- | --- | --- |
 | $mime | MIME type | string | Yes |
 
-**# RETURN** **(** string **|** false **)** → Extensión de archivo o false.
+**- return** (string|false) → Extensión de archivo o false.
 
 ---
 
