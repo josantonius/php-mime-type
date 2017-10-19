@@ -51,15 +51,53 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Josantonius\MimeType\MimeType;
 ```
+
 ### Available Methods
 
-Available methods in this library:
+---
+
+#### · get()
+
+Get array with all MIME types.
 
 ```php
 MimeType::get();
-MimeType::getMimeFromExtension();
-MimeType::getExtensionFromMime();
 ```
+
+**# RETURN**  **(** void **)**
+
+---
+
+#### · getMimeFromExtension()
+
+Get MIME type from file extension.
+
+```php
+MimeType::getMimeFromExtension($ext);
+```
+| Atttribute | Description | Type | Required
+| --- | --- | --- | --- |
+| $ext | File extension | string | Yes |
+
+**# RETURN** **(** string **|** false **)** → MIME type or false.
+
+---
+
+#### · getExtensionFromMime()
+
+Get MIME type from file extension.
+
+```php
+MimeType::getExtensionFromMime($mime);
+```
+| Atttribute | Description | Type | Required
+| --- | --- | --- | --- |
+| $mime | MIME type | string | Yes |
+
+**# RETURN** **(** string **|** false **)** → File extension or false.
+
+---
+
 ### Usage
 
 Example of use for this library:
@@ -70,9 +108,9 @@ require __DIR__ . '/vendor/autoload.php';
 
 use Josantonius\MimeType\MimeType;
 
-echo "[.json] → " . MimeType::getMimeFromExtension('.json'); // [.json] → application/json
+echo MimeType::getMimeFromExtension('.json'); // application/json
 
-echo "[text/html] → " . MimeType::getExtensionFromMime('text/html'); // [text/html] → .html
+echo MimeType::getExtensionFromMime('text/html'); // .html
 
 var_dump(MimeType::get());
 
@@ -104,7 +142,7 @@ array(682) {
 
 ### Tests 
 
-To run [tests](tests/MimeType) simply:
+To run [tests](tests) simply:
 
     $ git clone https://github.com/Josantonius/PHP-MimeType.git
     
@@ -115,7 +153,7 @@ To run [tests](tests/MimeType) simply:
 ### ☑ TODO
 
 - [x] Create tests
-- [ ] Improve documentation
+- [x] Improve documentation
 
 ### Contribute
 

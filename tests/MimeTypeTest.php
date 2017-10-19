@@ -16,6 +16,8 @@ use PHPUnit\Framework\TestCase;
 /**
  * Tests class for MimeType library.
  *
+ * @package Josantonius\MimeType
+ *
  * @since 1.0.0
  */
 class MimeTypeTest extends TestCase

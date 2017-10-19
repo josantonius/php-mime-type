@@ -19,7 +19,7 @@ namespace Josantonius\MimeType;
 class MimeType
 {
     /**
-     * Get Jsond file with MIME types and return array.
+     * Get array with all MIME types.
      *
      * @since 1.1.3
      *

@@ -1,5 +1,27 @@
 # CHANGELOG
 
+## 1.1.4 - 2017-10-19
+
+* Autoloaded with `PSR-4` all library files and test files
+
+* Dropped the use of a `JSON` file with mime types list and used `PHP` class instead.
+
+* Deleted `Josantonius\MimeType\MimeType::_getFromFile()` method.
+
+* Changed `Josantonius\MimeType\Test\MimeTypeTest` class to `Josantonius\MimeType\MimeTypeTest` class.
+
+* Deleted `MimeType/src/bootstrap.php` file
+
+* Deleted `MimeType/tests/bootstrap.php` file.
+
+* Deleted `MimeType/vendor` folder.
+
+* Deleted `MimeType/resources` folder
+
+* Added `Josantonius\MimeType\MimeTypesCollection` class.
+* Added `Josantonius\MimeType\MimeTypesCollection::all()` method.
+* Added `Josantonius\MimeType\MimeTypesCollection::get()` method.
+
 ## 1.1.3 - 2017-09-10
 
 * Unit tests supported by `PHPUnit` were added.

@@ -12,19 +12,23 @@
 namespace Josantonius\MimeType;
 
 /**
- * Class MimeTypesCollection
+ * MIME types handler.
  *
- * @package   Josantonius\MimeType
+ * Compiled from http://www.freeformatter.com/mime-types-list.html
  *
- * @author    Josantonius - hello@josantonius.com
- * @copyright Copyright (c) 2016 - 2017
- * @license   http://opensource.org/licenses/MIT - The MIT License (MIT)
- * @link      http://github.com/josantonius/PHP-MimeType
- * @since     1.0.0
- * @comment   Compiled from http://www.freeformatter.com/mime-types-list.html
+ * @package Josantonius\MimeType
+ *
+ * @since 1.1.4
  */
 class MimeTypesCollection
 {
+    /**
+     * App instance.
+     *
+     * @since 1.1.4
+     *
+     * @var array
+     */
     protected static $data = [
         ".123"         => "application/vnd.lotus-1-2-3",
         ".3dml"        => "text/vnd.in3d.3dml",
@@ -713,7 +717,9 @@ class MimeTypesCollection
     ];
 
     /**
-     * Returns all mime types
+     * Returns all mime types.
+     *
+     * @since 1.1.4
      *
      * @return array
      */
@@ -723,9 +729,12 @@ class MimeTypesCollection
     }
 
     /**
-     * Returns a mime type by extension
+     * Returns a mime type by extension.
+     *
+     * @since 1.1.4
      *
      * @param string $key
+     *
      * @return string|null
      */
     public static function get($key)
