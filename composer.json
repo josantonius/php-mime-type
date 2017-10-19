@@ -1,6 +1,5 @@
 {
     "name":        "josantonius/mimetype",
-    "version":     "1.1.3",
     "type":        "library",
     "description": "PHP library for obtain headers MIME.",
     "keywords": [
@@ -39,7 +38,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Josantonius\\MimeType\\": "src/MimeType/"
+            "Josantonius\\MimeType\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Josantonius\\MimeType\\": "tests/"
         }
     },
     "extra": {
