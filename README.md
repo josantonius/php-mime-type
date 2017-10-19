@@ -60,7 +60,7 @@ MimeType::get();
 
 Get array with all MIME types.
 
-**· RETURN** (void)
+**- RETURN** (void)
 
 ---
 
