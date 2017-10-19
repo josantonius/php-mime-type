@@ -54,15 +54,13 @@ use Josantonius\MimeType\MimeType;
 
 ### Available Methods
 
-#### · get()
-
-Get array with all MIME types.
-
 ```php
 MimeType::get();
 ```
 
-**-** RETURN (void)
+Get array with all MIME types.
+
+**# RETURN** (void)
 
 ---
 
