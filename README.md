@@ -54,8 +54,6 @@ use Josantonius\MimeType\MimeType;
 
 ### Available Methods
 
----
-
 **· get()**
 
 Get array with all MIME types.
@@ -95,8 +93,6 @@ MimeType::getExtensionFromMime($mime);
 | $mime | MIME type | string | Yes |
 
 **# RETURN** (string|false) → File extension or false.
-
----
 
 ### Usage
 
