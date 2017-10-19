@@ -54,7 +54,7 @@ use Josantonius\MimeType\MimeType;
 
 ### Available Methods
 
-**· get()**
+#### · get()
 
 Get array with all MIME types.
 
@@ -62,7 +62,7 @@ Get array with all MIME types.
 MimeType::get();
 ```
 
-**# RETURN**  (void)
+**RETURN**  (void)
 
 ---
 
