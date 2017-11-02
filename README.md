@@ -66,7 +66,7 @@ MimeType::get();
 MimeType::getMimeFromExtension($ext);
 ```
 
-| Atttribute | Description | Type | Required
+| Attribute | Description | Type | Required
 | --- | --- | --- | --- |
 | $ext | File extension. | string | Yes |
 
@@ -78,7 +78,7 @@ MimeType::getMimeFromExtension($ext);
 MimeType::getExtensionFromMime($mime);
 ```
 
-| Atttribute | Description | Type | Required
+| Attribute | Description | Type | Required
 | --- | --- | --- | --- |
 | $mime | MIME type. | string | Yes |
 
