@@ -1,6 +1,6 @@
 # PHP MimeType library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/mimetype/v/stable)](https://packagist.org/packages/josantonius/mimetype) [![Total Downloads](https://poser.pugx.org/josantonius/mimetype/downloads)](https://packagist.org/packages/josantonius/mimetype) [![Latest Unstable Version](https://poser.pugx.org/josantonius/mimetype/v/unstable)](https://packagist.org/packages/josantonius/mimetype) [![License](https://poser.pugx.org/josantonius/mimetype/license)](https://packagist.org/packages/josantonius/mimetype) [![Travis](https://travis-ci.org/Josantonius/PHP-MimeType.svg)](https://travis-ci.org/Josantonius/PHP-MimeType)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/MimeType/v/stable)](https://packagist.org/packages/josantonius/MimeType) [![Latest Unstable Version](https://poser.pugx.org/josantonius/MimeType/v/unstable)](https://packagist.org/packages/josantonius/MimeType) [![License](https://poser.pugx.org/josantonius/MimeType/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e4aa9b3dba374408ab1d35eca147ca50)](https://www.codacy.com/app/Josantonius/PHP-MimeType?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Josantonius/PHP-MimeType&amp;utm_campaign=Badge_Grade) [![Total Downloads](https://poser.pugx.org/josantonius/MimeType/downloads)](https://packagist.org/packages/josantonius/MimeType) [![Travis](https://travis-ci.org/Josantonius/PHP-MimeType.svg)](https://travis-ci.org/Josantonius/PHP-MimeType) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![CodeCov](https://codecov.io/gh/Josantonius/PHP-MimeType/branch/master/graph/badge.svg)](https://codecov.io/gh/Josantonius/PHP-MimeType)
 
 [English version](README.md)
 
@@ -8,10 +8,10 @@ Biblioteca PHP para obtener encabezados MIME y extensiones a partir de ellos.
 
 ---
 
-- [Instalación](#instalación)
 - [Requisitos](#requisitos)
-- [Cómo empezar y ejemplos](#cómo-empezar-y-ejemplos)
+- [Instalación](#instalación)
 - [Métodos disponibles](#métodos-disponibles)
+- [Cómo empezar](#cómo-empezar)
 - [Uso](#uso)
 - [Tests](#tests)
 - [Tareas pendientes](#-tareas-pendientes)
@@ -22,27 +22,67 @@ Biblioteca PHP para obtener encabezados MIME y extensiones a partir de ellos.
 
 ---
 
-### Instalación 
+## Requisitos
 
-La mejor forma de instalar esta extensión es a través de [composer](http://getcomposer.org/download/).
+Esta clase es soportada por versiones de **PHP 5.6** o superiores y es compatible con versiones de **HHVM 3.0** o superiores.
 
-Para instalar PHP MimeType library, simplemente escribe:
+## Instalación 
+
+La mejor forma de instalar esta extensión es a través de [Composer](http://getcomposer.org/download/).
+
+Para instalar **PHP MimeType library**, simplemente escribe:
 
     $ composer require Josantonius/MimeType
 
-El comando anterior sólo instalará los archivos necesarios, si prefieres descargar todo el código fuente (incluyendo tests, directorio vendor, excepciones no utilizadas, documentos...) puedes utilizar:
+El comando anterior sólo instalará los archivos necesarios, si prefieres **descargar todo el código fuente** puedes utilizar:
 
     $ composer require Josantonius/MimeType --prefer-source
 
-También puedes clonar el repositorio completo con Git:
+También puedes **clonar el repositorio** completo con Git:
 
-  $ git clone https://github.com/Josantonius/PHP-MimeType.git 
+  $ git clone https://github.com/Josantonius/PHP-MimeType.git
 
-### Requisitos
+O **instalarlo manualmente**:
 
-Esta biblioteca es soportada por versiones de PHP 5.6 o superiores y es compatible con versiones de HHVM 3.0 o superiores.
+[Descargar MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php):
 
-### Cómo empezar y ejemplos
+    $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php
+
+## Métodos disponibles
+
+### - Obtener array con todos los tipos de MIME:
+
+```php
+MimeType::get();
+```
+
+**# Return** (void)
+
+### - Obtener tipo de MIME desde extensión de archivo:
+
+```php
+MimeType::getMimeFromExtension($ext);
+```
+
+| Atributo | Descripción | Tipo | Requerido
+| --- | --- | --- | --- |
+| $ext | Extensión. | string | Sí |
+
+**# Return** (string|false) → MIME type o falso
+
+### - Obtener extensión de archivo desde tipo de MIME:
+
+```php
+MimeType::getExtensionFromMime($mime);
+```
+
+| Atributo | Descripción | Tipo | Requerido
+| --- | --- | --- | --- |
+| $mime | Tipo de MIME. | string | Sí |
+
+**# Return** (string|false) → extensión de archivo o false
+
+## Cómo empezar y ejemplos
 
 Para utilizar esta biblioteca, simplemente:
 
@@ -52,48 +92,9 @@ require __DIR__ . '/vendor/autoload.php';
 use Josantonius\MimeType\MimeType;
 ```
 
-### Métodos disponibles
-
-```php
-MimeType::get();
-```
-
-Obtener array con todos los tipos de MIME.
-
-**# Return** (void)
-
----
-
-```php
-MimeType::getMimeFromExtension($ext);
-```
-
-Obtener tipo de MIME desde extensión de archivo.
-
-| Atributo | Descripción | Tipo | Requerido
-| --- | --- | --- | --- |
-| $ext | File extension | string | Yes |
-
-**# Return** (string|false) → MIME type o false.
-
----
-
-```php
-MimeType::getExtensionFromMime($mime);
-```
-
-Obtener extensión de archivo desde tipo de MIME.
-
-| Atributo | Descripción | Tipo | Requerido
-| --- | --- | --- | --- |
-| $mime | MIME type | string | Yes |
-
-**# Return** (string|false) → Extensión de archivo o false.
-
-### Uso
+## Uso
 
 Ejemplo de uso para esta biblioteca:
-
 
 ```php
 <?php
@@ -133,22 +134,34 @@ array(682) {
 */
 ```
 
-### Tests 
+## Tests 
 
-Para ejecutar las [pruebas](tests) simplemente:
+Para ejecutar las [pruebas](tests) necesitarás [Composer](http://getcomposer.org/download/) y seguir los siguientes pasos:
 
     $ git clone https://github.com/Josantonius/PHP-MimeType.git
     
     $ cd PHP-MimeType
 
-    $ phpunit
+    $ composer install
 
-### ☑ Tareas pendientes
+Ejecutar pruebas unitarias con [PHPUnit](https://phpunit.de/):
+
+    $ composer phpunit
+
+Ejecutar pruebas de estándares de código [PSR2](http://www.php-fig.org/psr/psr-2/) con [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+
+    $ composer phpcs
+
+Ejecutar todas las pruebas anteriores:
+
+    $ composer tests
+
+## ☑ Tareas pendientes
 
 - [x] Completar tests
 - [x] Mejorar la documentación
 
-### Contribuir
+## Contribuir
 
 1. Comprobar si hay incidencias abiertas o abrir una nueva para iniciar una discusión en torno a un fallo o función.
 1. Bifurca la rama del repositorio en GitHub para iniciar la operación de ajuste.
@@ -158,15 +171,15 @@ Para ejecutar las [pruebas](tests) simplemente:
 
 Esto está pensado para proyectos grandes y de larga duración.
 
-### Repositorio
+## Repositorio
 
 Los archivos de este repositorio se crearon y subieron automáticamente con [Reposgit Creator](https://github.com/Josantonius/BASH-Reposgit).
 
-### Licencia
+## Licencia
 
 Este proyecto está licenciado bajo **licencia MIT**. Consulta el archivo [LICENSE](LICENSE) para más información.
 
-### Copyright
+## Copyright
 
 2016 -2017 Josantonius, [josantonius.com](https://josantonius.com/)
 

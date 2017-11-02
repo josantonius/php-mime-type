@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## 1.1.5 - 2017-11-02
+
+* Implemented `PSR-2 coding standard` from all library PHP files.
+
+* Implemented `PHPCS` to ensure that PHP code complies with `PSR2` code standards.
+
+* Implemented `Codacy` to automates code reviews and monitors code quality over time.
+
+* Implemented `Codecov` to coverage reports.
+
+* Added `DataType/phpcs.ruleset.xml` file.
+
 ## 1.1.4 - 2017-10-19
 
 * Autoloaded with `PSR-4` all library files and test files

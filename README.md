@@ -1,6 +1,6 @@
 # PHP MimeType library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/mimetype/v/stable)](https://packagist.org/packages/josantonius/mimetype) [![Total Downloads](https://poser.pugx.org/josantonius/mimetype/downloads)](https://packagist.org/packages/josantonius/mimetype) [![Latest Unstable Version](https://poser.pugx.org/josantonius/mimetype/v/unstable)](https://packagist.org/packages/josantonius/mimetype) [![License](https://poser.pugx.org/josantonius/mimetype/license)](https://packagist.org/packages/josantonius/mimetype) [![Travis](https://travis-ci.org/Josantonius/PHP-MimeType.svg)](https://travis-ci.org/Josantonius/PHP-MimeType)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/MimeType/v/stable)](https://packagist.org/packages/josantonius/MimeType) [![Latest Unstable Version](https://poser.pugx.org/josantonius/MimeType/v/unstable)](https://packagist.org/packages/josantonius/MimeType) [![License](https://poser.pugx.org/josantonius/MimeType/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e4aa9b3dba374408ab1d35eca147ca50)](https://www.codacy.com/app/Josantonius/PHP-MimeType?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Josantonius/PHP-MimeType&amp;utm_campaign=Badge_Grade) [![Total Downloads](https://poser.pugx.org/josantonius/MimeType/downloads)](https://packagist.org/packages/josantonius/MimeType) [![Travis](https://travis-ci.org/Josantonius/PHP-MimeType.svg)](https://travis-ci.org/Josantonius/PHP-MimeType) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![CodeCov](https://codecov.io/gh/Josantonius/PHP-MimeType/branch/master/graph/badge.svg)](https://codecov.io/gh/Josantonius/PHP-MimeType)
 
 [Versión en español](README-ES.md)
 
@@ -8,10 +8,10 @@ PHP library for obtain headers MIME.
 
 ---
 
-- [Installation](#installation)
 - [Requirements](#requirements)
-- [Quick Start and Examples](#quick-start-and-examples)
+- [Installation](#installation)
 - [Available Methods](#available-methods)
+- [Quick Start](#quick-start)
 - [Usage](#usage)
 - [Tests](#tests)
 - [TODO](#-todo)
@@ -22,29 +22,71 @@ PHP library for obtain headers MIME.
 
 ---
 
-### Installation
+## Requirements
 
-The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
+This library is supported by **PHP versions 5.6** or higher and is compatible with **HHVM versions 3.0** or higher.
 
-To install PHP MimeType library, simply:
+## Installation
+
+The preferred way to install this extension is through [Composer](http://getcomposer.org/download/).
+
+To install **PHP MimeType library**, simply:
 
     $ composer require Josantonius/MimeType
 
-The previous command will only install the necessary files, if you prefer to download the entire source code (including tests, vendor folder, exceptions not used, docs...) you can use:
+The previous command will only install the necessary files, if you prefer to **download the entire source code** you can use:
 
     $ composer require Josantonius/MimeType --prefer-source
 
-Or you can also clone the complete repository with Git:
+You can also **clone the complete repository** with Git:
 
-    $ git clone https://github.com/Josantonius/PHP-MimeType.git
+  $ git clone https://github.com/Josantonius/PHP-MimeType.git
 
-### Requirements
+Or **install it manually**:
 
-This library is supported by PHP versions 5.6 or higher and is compatible with HHVM versions 3.0 or higher.
+[Download MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php):
 
-### Quick Start and Examples
+    $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php
 
-To use this class, simply:
+## Available Methods
+
+Available methods in this library:
+
+### - Get array with all MIME types:
+
+```php
+MimeType::get();
+```
+
+**# Return** (void)
+
+### - Get MIME type from file extension:
+
+```php
+MimeType::getMimeFromExtension($ext);
+```
+
+| Atttribute | Description | Type | Required
+| --- | --- | --- | --- |
+| $ext | File extension. | string | Yes |
+
+**# Return** (string|false) → MIME type or false
+
+### - Get file extension from MIME type:
+
+```php
+MimeType::getExtensionFromMime($mime);
+```
+
+| Atttribute | Description | Type | Required
+| --- | --- | --- | --- |
+| $mime | MIME type. | string | Yes |
+
+**# Return** (string|false) → File extension or false.
+
+## Quick Start
+
+To use this library with **Composer**:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
@@ -52,45 +94,15 @@ require __DIR__ . '/vendor/autoload.php';
 use Josantonius\MimeType\MimeType;
 ```
 
-### Available Methods
+Or If you installed it **manually**, use it:
 
 ```php
-MimeType::get();
+require_once __DIR__ . '/MimeType.php';
+
+use Josantonius\MimeType\MimeType;
 ```
 
-Get array with all MIME types.
-
-**# Return** (void)
-
----
-
-```php
-MimeType::getMimeFromExtension($ext);
-```
-
-Get MIME type from file extension.
-
-| Atttribute | Description | Type | Required
-| --- | --- | --- | --- |
-| $ext | File extension | string | Yes |
-
-**# Return** (string|false) → MIME type or false.
-
----
-
-```php
-MimeType::getExtensionFromMime($mime);
-```
-
-Get MIME type from file extension.
-
-| Atttribute | Description | Type | Required
-| --- | --- | --- | --- |
-| $mime | MIME type | string | Yes |
-
-**# Return** (string|false) → File extension or false.
-
-### Usage
+## Usage
 
 Example of use for this library:
 
@@ -132,22 +144,34 @@ array(682) {
 */
 ```
 
-### Tests 
+## Tests 
 
-To run [tests](tests) simply:
+To run [tests](tests) you just need [Composer](http://getcomposer.org/download/) and to execute the following:
 
     $ git clone https://github.com/Josantonius/PHP-MimeType.git
     
     $ cd PHP-MimeType
 
-    $ phpunit
+    $ composer install
 
-### ☑ TODO
+Run unit tests with [PHPUnit](https://phpunit.de/):
+
+    $ composer phpunit
+
+Run [PSR2](http://www.php-fig.org/psr/psr-2/) code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+
+    $ composer phpcs
+
+Run all previous tests:
+
+    $ composer tests
+
+## ☑ TODO
 
 - [x] Create tests
 - [x] Improve documentation
 
-### Contribute
+## Contribute
 
 1. Check for open issues or open a new issue to start a discussion around a bug or feature.
 1. Fork the repository on GitHub to start making your changes.
@@ -157,15 +181,15 @@ To run [tests](tests) simply:
 
 This is intended for large and long-lived objects.
 
-### Repository
+## Repository
 
 All files in this repository were created and uploaded automatically with [Reposgit Creator](https://github.com/Josantonius/BASH-Reposgit).
 
-### License
+## License
 
 This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file for more info.
 
-### Copyright
+## Copyright
 
 2016 -2017 Josantonius, [josantonius.com](https://josantonius.com/)
 
