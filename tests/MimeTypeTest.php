@@ -8,7 +8,6 @@
  * @link       https://github.com/Josantonius/PHP-MimeType
  * @since      1.0.0
  */
-
 namespace Josantonius\MimeType;
 
 use PHPUnit\Framework\TestCase;
@@ -16,36 +15,63 @@ use PHPUnit\Framework\TestCase;
 /**
  * Tests class for MimeType library.
  *
- * @package Josantonius\MimeType
  *
  * @since 1.0.0
  */
 class MimeTypeTest extends TestCase
 {
     /**
+     * MimeType instance.
+     *
+     * @since 1.1.6
+     *
+     * @var object
+     */
+    protected $MimeType;
+
+    /**
+     * Set up.
+     *
+     * @since 1.1.6
+     */
+    public function setUp()
+    {
+        parent::setUp();
+
+        $this->MimeType = new MimeType;
+    }
+
+    /**
+     * Check if it is an instance of MimeType.
+     *
+     * @since 1.1.6
+     */
+    public function testIsInstanceOfMimeType()
+    {
+        $actual = $this->MimeType;
+        $this->assertInstanceOf('Josantonius\MimeType\MimeType', $actual);
+    }
+
+    /**
      * Get Jsond file with MIME types and return array.
      *
      * @since 1.1.3
-     *
-     * @return void
      */
     public function testGet()
     {
-        $this->assertArrayHasKey('.html', MimeType::get());
+        $this->assertArrayHasKey('.html', $this->MimeType->get());
     }
 
     /**
      * Get MIME type from file extension.
      *
      * @since 1.0.0
-     *
-     * @return void
      */
     public function testGetMimeFromExtension()
     {
-        $this->assertEquals(
+        $this->assertSame(
             'text/html',
-            MimeType::getMimeFromExtension('.html')
+            $this->MimeType->getMimeFromExtension('.html')
         );
     }
 
@@ -53,26 +79,22 @@ class MimeTypeTest extends TestCase
      * Getting a MIME Type wrong.
      *
      * @since 1.0.0
-     *
-     * @return void
      */
     public function testGetMimeFromExtensionUndefined()
     {
-        $this->assertFalse(MimeType::getMimeFromExtension('abcde'));
+        $this->assertFalse($this->MimeType->getMimeFromExtension('abcde'));
     }
 
     /**
      * Get file extension from MIME type.
      *
      * @since 1.0.0
-     *
-     * @return void
      */
     public function testGetExtensionFromMime()
     {
-        $this->assertEquals(
+        $this->assertSame(
             '.html',
-            MimeType::getExtensionFromMime('text/html')
+            $this->MimeType->getExtensionFromMime('text/html')
         );
     }
 
@@ -80,11 +102,9 @@ class MimeTypeTest extends TestCase
      * Getting a MIME Type wrong.
      *
      * @since 1.0.0
-     *
-     * @return void
      */
     public function testGetExtensionFromMimeUndefined()
     {
-        $this->assertFalse(MimeType::getExtensionFromMime('abcd/abcd'));
+        $this->assertFalse($this->MimeType->getExtensionFromMime('abcd/abcd'));
     }
 }

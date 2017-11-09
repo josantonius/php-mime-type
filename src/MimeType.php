@@ -8,7 +8,6 @@
  * @link       https://github.com/Josantonius/PHP-MimeType
  * @since      1.0.0
  */
-
 namespace Josantonius\MimeType;
 
 /**
@@ -55,6 +54,6 @@ class MimeType
      */
     public static function getExtensionFromMime($mime)
     {
-        return array_search($mime, MimeTypesCollection::all());
+        return array_search($mime, MimeTypesCollection::all(), true);
     }
 }
