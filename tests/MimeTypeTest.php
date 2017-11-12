@@ -59,7 +59,9 @@ class MimeTypeTest extends TestCase
      */
     public function testGet()
     {
-        $this->assertArrayHasKey('.html', $this->MimeType->get());
+        $mimeType = $this->MimeType;
+
+        $this->assertArrayHasKey('.html', $mimeType::get());
     }
 
     /**
@@ -69,9 +71,16 @@ class MimeTypeTest extends TestCase
      */
     public function testGetMimeFromExtension()
     {
+        $mimeType = $this->MimeType;
+
         $this->assertSame(
             'text/html',
-            $this->MimeType->getMimeFromExtension('.html')
+            $mimeType::getMimeFromExtension('.html')
+        );
+
+        $this->assertSame(
+            'text/html',
+            $mimeType::getMimeFromExtension('html')
         );
     }
 
@@ -82,7 +91,9 @@ class MimeTypeTest extends TestCase
      */
     public function testGetMimeFromExtensionUndefined()
     {
-        $this->assertFalse($this->MimeType->getMimeFromExtension('abcde'));
+        $mimeType = $this->MimeType;
+
+        $this->assertFalse($mimeType::getMimeFromExtension('abcde'));
     }
 
     /**
@@ -92,9 +103,11 @@ class MimeTypeTest extends TestCase
      */
     public function testGetExtensionFromMime()
     {
+        $mimeType = $this->MimeType;
+
         $this->assertSame(
             '.html',
-            $this->MimeType->getExtensionFromMime('text/html')
+            $mimeType::getExtensionFromMime('text/html')
         );
     }
 
@@ -105,6 +118,8 @@ class MimeTypeTest extends TestCase
      */
     public function testGetExtensionFromMimeUndefined()
     {
-        $this->assertFalse($this->MimeType->getExtensionFromMime('abcd/abcd'));
+        $mimeType = $this->MimeType;
+
+        $this->assertFalse($mimeType::getExtensionFromMime('abcd/abcd'));
     }
 }
