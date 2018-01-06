@@ -2,18 +2,16 @@
 /**
  * PHP library for obtain headers MIME.
  *
- * @author     Josantonius - info@josantonius.com
- * @copyright  Copyright (c) 2016 - 2017
- * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @link       https://github.com/Josantonius/PHP-MimeType
- * @since      1.0.0
+ * @author    Josantonius <hello@josantonius.com>
+ * @copyright 2016 - 2018 (c) Josantonius - PHP-MimeType
+ * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
+ * @link      https://github.com/Josantonius/PHP-MimeTypeype
+ * @since     1.0.0
  */
 namespace Josantonius\MimeType;
 
 /**
  * Get MIME type and file extensions.
- *
- * @since 1.0.0
  */
 class MimeType
 {
@@ -32,8 +30,6 @@ class MimeType
     /**
      * Get MIME type from file extension.
      *
-     * @since 1.0.0
-     *
      * @param string $ext → file extension, e.g. '.html'
      *
      * @return string|false → MIME type or false
@@ -45,8 +41,6 @@ class MimeType
 
     /**
      * Get file extension from MIME type.
-     *
-     * @since 1.0.0
      *
      * @param string $mime → MIME type, e.g. 'text/html'
      *
