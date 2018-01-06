@@ -44,9 +44,11 @@ También puedes **clonar el repositorio** completo con Git:
 
 O **instalarlo manualmente**:
 
-[Descargar MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php):
+Descargar [MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php) y [MimeTypesCollection.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php):
 
     $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php
+
+    $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php
 
 ## Métodos disponibles
 
@@ -82,12 +84,21 @@ MimeType::getExtensionFromMime($mime);
 
 **# Return** (string|false) → extensión de archivo o false
 
-## Cómo empezar y ejemplos
+## Cómo empezar
 
 Para utilizar esta biblioteca, simplemente:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
+
+use Josantonius\MimeType\MimeType;
+```
+
+Si la instalaste **manualmente**, utiliza:
+
+```php
+require_once __DIR__ . '/MimeType.php';
+require_once __DIR__ . '/MimeTypesCollection.php';
 
 use Josantonius\MimeType\MimeType;
 ```
@@ -184,8 +195,8 @@ Si deseas colaborar, puedes echar un vistazo a la lista de
 
 **¡Gracias a quienes ya habéis contribuido a este proyecto!**
 
-[<img alt="MASNathan" src="https://avatars0.githubusercontent.com/u/2139464?v=4&s=117" height="117" width="117">](https://github.com/MASNathan) |[<img alt="vincent-guesnard" src="https://avatars3.githubusercontent.com/u/315173?v=4&s=117" height="117" width="117">](https://github.com/vincent-guesnard)
-:---:|
+[<img alt="vincent-guesnard" src="https://avatars3.githubusercontent.com/u/315173?v=4&s=117" height="117" width="117">](https://github.com/vincent-guesnard)|[<img alt="MASNathan" src="https://avatars0.githubusercontent.com/u/2139464?v=4&s=117" height="117" width="117">](https://github.com/MASNathan)
+:---:|:---:|
 [vincent-guesnard](https://github.com/vincent-guesnard)|[MASNathan](https://github.com/MASNathan)|
 
 ## Repositorio

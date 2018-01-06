@@ -44,9 +44,11 @@ You can also **clone the complete repository** with Git:
 
 Or **install it manually**:
 
-[Download MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php):
+Download [MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php) and [MimeTypesCollection.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php):
 
     $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php
+
+    $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php
 
 ## Available Methods
 
@@ -98,6 +100,7 @@ Or If you installed it **manually**, use it:
 
 ```php
 require_once __DIR__ . '/MimeType.php';
+require_once __DIR__ . '/MimeTypesCollection.php';
 
 use Josantonius\MimeType\MimeType;
 ```
