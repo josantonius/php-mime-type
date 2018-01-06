@@ -195,7 +195,7 @@ If you would like to help, please take a look at the list of
 **Thank you to all the people who already contributed to this project!**
 
 [<img alt="MASNathan" src="https://avatars0.githubusercontent.com/u/2139464?v=4&s=117" height="117" width="117">](https://github.com/MASNathan) |[<img alt="vincent-guesnard" src="https://avatars3.githubusercontent.com/u/315173?v=4&s=117" height="117" width="117">](https://github.com/vincent-guesnard)
-:---:|
+:---:|:---:|
 [vincent-guesnard](https://github.com/vincent-guesnard)|[MASNathan](https://github.com/MASNathan)|
 
 ## Repository
