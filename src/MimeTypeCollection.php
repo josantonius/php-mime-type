@@ -1,28 +1,24 @@
 <?php
-/**
- * PHP library for obtain headers MIME.
- *
- * @author    Josantonius <hello@josantonius.com>
- * @copyright 2016 - 2018 (c) Josantonius - PHP-MimeType
- * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @link      https://github.com/Josantonius/PHP-MimeType
- * @since     1.1.4
- */
+
+/*
+* This file is part of https://github.com/josantonius/php-mime-type repository.
+*
+* (c) Josantonius <hello@josantonius.dev>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
 namespace Josantonius\MimeType;
 
 /**
- * MIME types handler.
+ * MIME types collection.
  *
  * Compiled from http://www.freeformatter.com/mime-types-list.html
  */
-class MimeTypesCollection
+class MimeTypeCollection
 {
-    /**
-     * App instance.
-     *
-     * @var array
-     */
-    protected static $data = [
+    protected static array $data = [
         '.123' => 'application/vnd.lotus-1-2-3',
         '.3dml' => 'text/vnd.in3d.3dml',
         '.3g2' => 'video/3gpp2',
@@ -711,31 +707,25 @@ class MimeTypesCollection
 
     /**
      * Returns all mime types.
-     *
-     * @return array
      */
-    public static function all()
+    public static function getAll(): array
     {
         return self::$data;
     }
 
     /**
-     * Returns a mime type by extension.
-     *
-     * @param string $key
-     *
-     * @return string|null
+     * Get file extension from MIME type.
      */
-    public static function get($key)
+    public static function getExtension(string $mimeType): ?string
     {
-        if (isset(self::$data[$key])) {
-            return self::$data[$key];
-        }
+        return array_search($mimeType, self::$data, true) ?: null;
+    }
 
-        if (isset(self::$data['.' . $key])) {
-            return self::$data['.' . $key];
-        }
-
-        return null;
+    /**
+     * Get MIME type from file extension.
+     */
+    public static function getMime(string $extension): ?string
+    {
+        return self::$data[$extension] ?? self::$data[".$extension"] ?? null;
     }
 }

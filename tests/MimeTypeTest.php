@@ -1,95 +1,68 @@
 <?php
-/**
- * PHP library for obtain headers MIME.
- *
- * @author    Josantonius <hello@josantonius.com>
- * @copyright 2016 - 2018 (c) Josantonius - PHP-MimeType
- * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @link      https://github.com/Josantonius/PHP-MimeType
- * @since     1.0.0
- */
-namespace Josantonius\MimeType;
+
+/*
+* This file is part of https://github.com/josantonius/php-mime-type repository.
+*
+* (c) Josantonius <hello@josantonius.dev>
+*
+* For the full copyright and license information, please view the LICENSE
+* file that was distributed with this source code.
+*/
+
+namespace Josantonius\MimeType\Tests;
 
 use PHPUnit\Framework\TestCase;
+use Josantonius\MimeType\MimeType;
+use Josantonius\MimeType\MimeTypeCollection;
 
-/**
- * Tests class for MimeType library.
- */
 class MimeTypeTest extends TestCase
 {
-    /**
-     * MimeType instance.
-     *
-     * @since 1.1.6
-     *
-     * @var object
-     */
-    protected $MimeType;
+    protected MimeType $mimeType;
 
-    /**
-     * Set up.
-     *
-     * @since 1.1.6
-     */
-    public function setUp()
+    protected MimeTypeCollection $collection;
+
+    public function setUp(): void
     {
         parent::setUp();
 
-        $this->MimeType = new MimeType;
+        $this->mimeType   = new MimeType();
+        $this->collection = new MimeTypeCollection();
     }
 
-    /**
-     * Check if it is an instance of MimeType.
-     *
-     * @since 1.1.6
-     */
-    public function testIsInstanceOfMimeType()
+    public function testShouldGetAllMimeTypes(): void
     {
-        $this->assertInstanceOf('Josantonius\MimeType\MimeType', $this->MimeType);
+        $mimeTypes = $this->mimeType->getAll();
+
+        $this->assertNotEmpty($this->mimeType->getAll());
+
+        $this->assertNotEmpty($this->collection->getAll());
     }
 
-    /**
-     * Get Jsond file with MIME types and return array.
-     *
-     * @since 1.1.3
-     */
-    public function testGet()
+    public function testShouldGetMimeTypeFromExtension(): void
     {
-        $mimeType = $this->MimeType;
+        $this->assertSame('text/html', $this->mimeType->getMime('.html'));
 
-        $this->assertArrayHasKey('.html', $mimeType::get());
+        $this->assertSame('text/html', $this->collection->getMime('.html'));
     }
 
-    /**
-     * Getting a MIME Type wrong.
-     */
-    public function testGetMimeFromExtensionUndefined()
+    public function testShouldReturnNullWithAnUnknownExtension(): void
     {
-        $mimeType = $this->MimeType;
+        $this->assertNull($this->mimeType->getMime('.foo'));
 
-        $this->assertFalse($mimeType::getMimeFromExtension('abcde'));
+        $this->assertNull($this->collection->getMime('.foo'));
     }
 
-    /**
-     * Get file extension from MIME type.
-     */
-    public function testGetExtensionFromMime()
+    public function testShouldGetExtensionFromMimeType(): void
     {
-        $mimeType = $this->MimeType;
+        $this->assertSame('.html', $this->mimeType->getExtension('text/html'));
 
-        $this->assertSame(
-            '.html',
-            $mimeType::getExtensionFromMime('text/html')
-        );
+        $this->assertSame('.html', $this->collection->getExtension('text/html'));
     }
 
-    /**
-     * Getting a MIME Type wrong.
-     */
-    public function testGetExtensionFromMimeUndefined()
+    public function testShouldReturnNullWithAnUnknownMimeType(): void
     {
-        $mimeType = $this->MimeType;
+        $this->assertNull($this->mimeType->getExtension('bar'));
 
-        $this->assertFalse($mimeType::getExtensionFromMime('abcd/abcd'));
+        $this->assertNull($this->collection->getExtension('bar'));
     }
 }
