@@ -1,10 +1,17 @@
 # PHP MimeType library
 
-[![Latest Stable Version](https://poser.pugx.org/josantonius/MimeType/v/stable)](https://packagist.org/packages/josantonius/MimeType) [![Latest Unstable Version](https://poser.pugx.org/josantonius/MimeType/v/unstable)](https://packagist.org/packages/josantonius/MimeType) [![License](https://poser.pugx.org/josantonius/MimeType/license)](LICENSE) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e4aa9b3dba374408ab1d35eca147ca50)](https://www.codacy.com/app/Josantonius/PHP-MimeType?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Josantonius/PHP-MimeType&amp;utm_campaign=Badge_Grade) [![Total Downloads](https://poser.pugx.org/josantonius/MimeType/downloads)](https://packagist.org/packages/josantonius/MimeType) [![Travis](https://travis-ci.org/Josantonius/PHP-MimeType.svg)](https://travis-ci.org/Josantonius/PHP-MimeType) [![PSR2](https://img.shields.io/badge/PSR-2-1abc9c.svg)](http://www.php-fig.org/psr/psr-2/) [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](http://www.php-fig.org/psr/psr-4/) [![CodeCov](https://codecov.io/gh/Josantonius/PHP-MimeType/branch/master/graph/badge.svg)](https://codecov.io/gh/Josantonius/PHP-MimeType)
+[![Latest Stable Version](https://poser.pugx.org/josantonius/mime-type/v/stable)](https://packagist.org/packages/josantonius/mime-type)
+[![License](https://poser.pugx.org/josantonius/mime-type/license)](LICENSE)
+[![Total Downloads](https://poser.pugx.org/josantonius/mime-type/downloads)](https://packagist.org/packages/josantonius/mime-type)
+[![CI](https://github.com/josantonius/php-mime-type/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/josantonius/php-mime-type/actions/workflows/ci.yml)
+[![CodeCov](https://codecov.io/gh/josantonius/php-mime-type/branch/main/graph/badge.svg)](https://codecov.io/gh/josantonius/php-mime-type)
+[![PSR1](https://img.shields.io/badge/PSR-1-f57046.svg)](https://www.php-fig.org/psr/psr-1/)
+[![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](https://www.php-fig.org/psr/psr-4/)
+[![PSR12](https://img.shields.io/badge/PSR-12-1abc9c.svg)](https://www.php-fig.org/psr/psr-12/)
 
-[Versión en español](README-ES.md)
+**Translations**: [Español](.github/lang/es-ES/README.md)
 
-PHP library for obtain headers MIME.
+PHP library to get MIME types from extensions.
 
 ---
 
@@ -14,17 +21,17 @@ PHP library for obtain headers MIME.
 - [Quick Start](#quick-start)
 - [Usage](#usage)
 - [Tests](#tests)
-- [TODO](#-todo)
-- [Contribute](#contribute)
-- [Repository](#repository)
+- [TODO](#todo)
+- [Changelog](#changelog)
+- [Contribution](#contribution)
+- [Sponsor](#Sponsor)
 - [License](#license)
-- [Copyright](#copyright)
 
 ---
 
 ## Requirements
 
-This library is supported by **PHP versions 5.6** or higher and is compatible with **HHVM versions 3.0** or higher.
+This library is compatible with the PHP versions: 8.0 | 8.1.
 
 ## Installation
 
@@ -32,187 +39,202 @@ The preferred way to install this extension is through [Composer](http://getcomp
 
 To install **PHP MimeType library**, simply:
 
-    $ composer require Josantonius/MimeType
+```console
+composer require josantonius/mime-type
+```
 
 The previous command will only install the necessary files, if you prefer to **download the entire source code** you can use:
 
-    $ composer require Josantonius/MimeType --prefer-source
+```console
+composer require josantonius/mime-type --prefer-source
+```
 
 You can also **clone the complete repository** with Git:
 
-  $ git clone https://github.com/Josantonius/PHP-MimeType.git
-
-Or **install it manually**:
-
-Download [MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php) and [MimeTypesCollection.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php):
-
-    $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php
-
-    $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php
+```console
+git clone https://github.com/josantonius/php-mime-type.git
+```
 
 ## Available Methods
 
 Available methods in this library:
 
-### - Get array with all MIME types:
+### Get array with all MIME types
 
 ```php
-MimeType::get();
+$mimeType->getAll(): array
 ```
 
-**# Return** (void)
-
-### - Get MIME type from file extension:
+### Get file extension from MIME type
 
 ```php
-MimeType::getMimeFromExtension($ext);
+$mimeType->getExtension(string $mimeType): string|null
 ```
 
-| Attribute | Description | Type | Required
-| --- | --- | --- | --- |
-| $ext | File extension. | string | Yes |
-
-**# Return** (string|false) → MIME type or false
-
-### - Get file extension from MIME type:
+### Get MIME type from file extension
 
 ```php
-MimeType::getExtensionFromMime($mime);
+$mimeType->getMime($extension): string|null
 ```
-
-| Attribute | Description | Type | Required
-| --- | --- | --- | --- |
-| $mime | MIME type. | string | Yes |
-
-**# Return** (string|false) → File extension or false.
 
 ## Quick Start
 
-To use this library with **Composer**:
+To use this library:
+
+### Using Objects
 
 ```php
-require __DIR__ . '/vendor/autoload.php';
-
 use Josantonius\MimeType\MimeType;
+
+$mimeType = new MimeType();
 ```
 
-Or If you installed it **manually**, use it:
+### Using Static Collection
+
+Alternatively you can use the collection to access the methods statically:
 
 ```php
-require_once __DIR__ . '/MimeType.php';
-require_once __DIR__ . '/MimeTypesCollection.php';
-
-use Josantonius\MimeType\MimeType;
+use Josantonius\MimeType\MimeTypeCollection;
 ```
 
 ## Usage
 
 Example of use for this library:
 
+### - Get array with all MIME types
+
+[Using objects](#using-objects):
+
 ```php
-<?php
-require __DIR__ . '/vendor/autoload.php';
-
-use Josantonius\MimeType\MimeType;
-
-echo MimeType::getMimeFromExtension('.json'); // application/json
-
-echo MimeType::getExtensionFromMime('text/html'); // .html
-
-var_dump(MimeType::get());
-
-/*
-array(682) {
-  [".123"]=>
-  string(27) "application/vnd.lotus-1-2-3"
-  [".3dml"]=>
-  string(18) "text/vnd.in3d.3dml"
-  [".3g2"]=>
-  string(11) "video/3gpp2"
-  [".3gp"]=>
-  string(10) "video/3gpp"
-  [".7z"]=>
-  string(27) "application/x-7z-compressed"
-  [".aab"]=>
-  string(28) "application/x-authorware-bin"
-  [".aac"]=>
-  string(11) "audio/x-aac"
-  [".aam"]=>
-  string(28) "application/x-authorware-map"
-  [".aas"]=>
-  string(28) "application/x-authorware-seg"
-  [".abw"]=>
-  string(21) "application/x-abiword"
-(...)
-*/
+$mimeType->getAll();
 ```
 
-## Tests 
+[Using the static collection](#using-static-collection):
 
-To run [tests](tests) you just need [composer](http://getcomposer.org/download/) and to execute the following:
+```php
+MimeTypeCollection::getAll();
+```
 
-    $ git clone https://github.com/Josantonius/PHP-MimeType.git
-    
-    $ cd PHP-MimeType
+Result:
 
-    $ composer install
+```php
+[
+    [".123"]=> "application/vnd.lotus-1-2-3"
+    [".3dml"]=> "text/vnd.in3d.3dml"
+    [".3g2"]=> "video/3gpp2"
+    [".3gp"]=> "video/3gpp"
+    [".7z"]=> "application/x-7z-compressed"
+    [".aab"]=> "application/x-authorware-bin"
+    [".aac"]=> "audio/x-aac"
+    [".aam"]=> "application/x-authorware-map"
+    [".aas"]=> "application/x-authorware-seg"
+    [".abw"]=> "application/x-abiword"
+    (...)
+]
+```
+
+### - Get file extension from MIME type
+
+[Using objects](#using-objects):
+
+```php
+$mimeType->getExtension('text/html'); // .html
+```
+
+[Using the static collection](#using-static-collection):
+
+```php
+MimeTypeCollection::getExtension('application/zip'); // .zip
+```
+
+### - Get MIME type from file extension
+
+[Using objects](#using-objects):
+
+```php
+$mimeType->getMime('.tar'); // application/x-tar
+```
+
+The dot can be omitted:
+
+```php
+$mimeType->getMime('mp4'); // video/mp4
+```
+
+[Using the static collection](#using-static-collection):
+
+```php
+MimeTypeCollection::getMime('.json'); // application/json
+```
+
+## Tests
+
+To run [tests](tests) you just need [composer](http://getcomposer.org/download/)
+and to execute the following:
+
+```console
+git clone https://github.com/josantonius/php-mime-type.git
+```
+
+```console
+cd PHP-MimeType
+```
+
+```console
+composer install
+```
 
 Run unit tests with [PHPUnit](https://phpunit.de/):
 
-    $ composer phpunit
+```console
+composer phpunit
+```
 
-Run [PSR2](http://www.php-fig.org/psr/psr-2/) code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
+Run code standard tests with [PHPCS](https://github.com/squizlabs/PHP_CodeSniffer):
 
-    $ composer phpcs
+```console
+composer phpcs
+```
 
 Run [PHP Mess Detector](https://phpmd.org/) tests to detect inconsistencies in code style:
 
-    $ composer phpmd
+```console
+composer phpmd
+```
 
 Run all previous tests:
 
-    $ composer tests
+```console
+composer tests
+```
 
-## ☑ TODO
+## TODO
 
-- [ ] Add new feature.
-- [ ] Improve tests.
-- [ ] Improve documentation.
-- [ ] Refactor code for disabled code style rules. See [phpmd.xml](phpmd.xml) and [.php_cs.dist](.php_cs.dist).
+- [ ] Add new feature
+- [ ] Improve tests
+- [ ] Improve documentation
+- [ ] Improve English translation in the README file
+- [ ] Refactor code for disabled code style rules (see phpmd.xml and phpcs.xml)
 
-## Contribute
+## Changelog
 
-If you would like to help, please take a look at the list of
-[issues](https://github.com/Josantonius/PHP-MimeType/issues) or the [To Do](#-todo) checklist.
+Detailed changes for each release are documented in the
+[release notes](https://github.com/josantonius/php-mime-type/releases).
 
-**Pull requests**
+## Contribution
 
-* [Fork and clone](https://help.github.com/articles/fork-a-repo).
-* Run the command `composer install` to install the dependencies.
-  This will also install the [dev dependencies](https://getcomposer.org/doc/03-cli.md#install).
-* Run the command `composer fix` to excute code standard fixers.
-* Run the [tests](#tests).
-* Create a **branch**, **commit**, **push** and send me a
-  [pull request](https://help.github.com/articles/using-pull-requests).
+Please make sure to read the [Contributing Guide](.github/CONTRIBUTING.md), before making a pull
+request, start a discussion or report a issue.
 
-**Thank you to all the people who already contributed to this project!**
+Thanks to all [contributors](https://github.com/josantonius/php-mime-type/graphs/contributors)! :heart:
 
-[<img alt="vincent-guesnard" src="https://avatars3.githubusercontent.com/u/315173?v=4&s=117" height="117" width="117">](https://github.com/vincent-guesnard)|[<img alt="MASNathan" src="https://avatars0.githubusercontent.com/u/2139464?v=4&s=117" height="117" width="117">](https://github.com/MASNathan)
-:---:|:---:|
-[vincent-guesnard](https://github.com/vincent-guesnard)|[MASNathan](https://github.com/MASNathan)|
+## Sponsor
 
-## Repository
-
-The file structure from this repository was created with [PHP-Skeleton](https://github.com/Josantonius/PHP-Skeleton).
+If this project helps you to reduce your development time,
+[you can sponsor me](https://github.com/josantonius#sponsor) to support my open source work :blush:
 
 ## License
 
-This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file for more info.
+This repository is licensed under the [MIT License](LICENSE).
 
-## Copyright
-
-2016 - 2018 Josantonius, [josantonius.com](https://josantonius.com/)
-
-If you find it useful, let me know :wink:
-
-You can contact me on [Twitter](https://twitter.com/Josantonius) or through my [email](mailto:hello@josantonius.com).
+Copyright © 2016-present, [Josantonius](https://github.com/josantonius#contact)
