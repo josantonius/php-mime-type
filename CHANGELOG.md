@@ -1,12 +1,56 @@
 # CHANGELOG
 
-## 1.1.7 - 2018-01-06
+## [v2.0.0](https://github.com/josantonius/php-mime-type/releases/tag/v2.0.0) (2022-08-01)
+
+> Version 1.x is considered as deprecated and unsupported.
+> In this version (2.x) the library was completely restructured.
+> It is recommended to review the documentation for this version and make the necessary changes
+> before starting to use it, as it not be compatible with version 1.x.
+
+---
+
+* The library was completely refactored.
+
+* Support for PHP version 8.0.
+
+* Support for earlier versions of PHP **8.0** is discontinued.
+
+* Replaced all static methods in `Josantonius\MimeType\MimeType` class.
+
+* Improved documentation; `README.md`, `CODE_OF_CONDUCT.md`, `CONTRIBUTING.md` and `CHANGELOG.md`.
+
+* Removed `Codacy`.
+
+* Removed `PHP Coding Standards Fixer`.
+
+* The `master` branch was renamed to `main`.
+
+* The `develop` branch was added to use a workflow based on `Git Flow`.
+
+* `Travis` is discontinued for continuous integration. `GitHub Actions` will be used from now on.
+
+* Added `.github/CODE_OF_CONDUCT.md` file.
+* Added `.github/CONTRIBUTING.md` file.
+* Added `.github/FUNDING.yml` file.
+* Added `.github/workflows/ci.yml` file.
+* Added `.github/lang/es-ES/CODE_OF_CONDUCT.md` file.
+* Added `.github/lang/es-ES/CONTRIBUTING.md` file.
+* Added `.github/lang/es-ES/LICENSE` file.
+* Added `.github/lang/es-ES/README` file.
+
+* Deleted `.travis.yml` file.
+* Deleted `.editorconfig` file.
+* Deleted `CONDUCT.MD` file.
+* Deleted `README-ES.MD` file.
+* Deleted `.php_cs.dist` file.
+
+## [1.1.7](https://github.com/josantonius/php-mime-type/releases/tag/1.0.0) (2018-01-06)
 
 * The tests were fixed.
 
 * Changes in documentation.
 
-## 1.1.6 - 2017-11-09
+## [1.1.6](https://github.com/josantonius/php-mime-type/releases/tag/1.1.6) (2017-11-09)
 
 * Implemented `PHP Mess Detector` to detect inconsistencies in code styles.
 
@@ -14,7 +58,7 @@
 
 * Implemented `PHP Coding Standards Fixer` to organize PHP code automatically according to PSR standards.
 
-## 1.1.5 - 2017-11-02
+## [1.1.5](https://github.com/josantonius/php-mime-type/releases/tag/1.1.5) (2017-11-02)
 
 * Implemented `PSR-2 coding standard` from all library PHP files.
 
@@ -26,7 +70,7 @@
 
 * Added `DataType/phpcs.ruleset.xml` file.
 
-## 1.1.4 - 2017-10-19
+## [1.1.4](https://github.com/josantonius/php-mime-type/releases/tag/1.1.4) (2017-10-19)
 
 * Autoloaded with `PSR-4` all library files and test files
 
@@ -48,7 +92,7 @@
 * Added `Josantonius\MimeType\MimeTypesCollection::all()` method.
 * Added `Josantonius\MimeType\MimeTypesCollection::get()` method.
 
-## 1.1.3 - 2017-09-10
+## [1.1.3](https://github.com/josantonius/php-mime-type/releases/tag/1.1.3) (2017-09-10)
 
 * Unit tests supported by `PHPUnit` were added.
 
@@ -83,40 +127,33 @@
 * Added `MimeType/_config.yml` file.
 * Added `MimeType/.travis.yml` file.
 
-## 1.1.2 - 2017-07-16
+## [1.1.2](https://github.com/josantonius/php-mime-type/releases/tag/1.1.2) (2017-07-16)
 
 * Deleted `Josantonius\MimeType\Exception\MimeTypeException` class.
 * Deleted `Josantonius\MimeType\Exception\Exceptions` abstract class.
 * Deleted `Josantonius\MimeType\Exception\MimeTypeException->__construct()` method.
 
-## 1.1.1 - 2017-03-18
+## [1.1.1](https://github.com/josantonius/php-mime-type/releases/tag/1.1.1) (2017-03-18)
 
 * Some files were excluded from download and comments and readme files were updated.
 
-## 1.1.0 - 2017-01-31
+## [1.1.0](https://github.com/josantonius/php-mime-type/releases/tag/1.0.0) (2017-01-31)
 
 * Compatible with PHP 5.6 or higher.
 
-## 1.0.0 - 2017-01-31
+## [1.0.0](https://github.com/josantonius/php-mime-type/releases/tag/1.0.0) (2016-12-19)
 
-* Compatible only with PHP 7.0 or higher. In the next versions, the library will be modified to make it compatible with PHP 5.6 or higher.
-
-## 1.0.0 - 2016-12-19
+* Compatible only with PHP 7.0 or higher. In the next versions,
+the library will be modified to make it compatible with PHP 5.6 or higher.
 
 * Added `Josantonius\MimeType\MimeType` class.
 * Added `Josantonius\MimeType\MimeType::load()` method.
 * Added `Josantonius\MimeType\MimeType::getMimeFromExtension()` method.
 * Added `Josantonius\MimeType\MimeType::getExtensionFromMime()` method.
 * Added `Josantonius\MimeType\MimeType::getAll()` method.
-
-## 1.0.0 - 2016-12-19
-
 * Added `Josantonius\MimeType\Exception\MimeTypeException` class.
 * Added `Josantonius\MimeType\Exception\Exceptions` abstract class.
 * Added `Josantonius\MimeType\Exception\MimeTypeException->__construct()` method.
-
-## 1.0.0 - 2016-12-19
-
 * Added `Josantonius\MimeType\Tests\MimeTypeTest` class.
 * Added `Josantonius\MimeType\Tests\MimeTypeTest::testGetMimeFromExtension()` method.
 * Added `Josantonius\MimeType\Tests\MimeTypeTest::testGetMimeFromExtensionUndefined()` method.
