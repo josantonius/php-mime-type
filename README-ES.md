@@ -44,9 +44,11 @@ También puedes **clonar el repositorio** completo con Git:
 
 O **instalarlo manualmente**:
 
-[Descargar MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php):
+Descargar [MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php) y [MimeTypesCollection.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php):
 
     $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php
+
+    $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php
 
 ## Métodos disponibles
 
@@ -82,12 +84,21 @@ MimeType::getExtensionFromMime($mime);
 
 **# Return** (string|false) → extensión de archivo o false
 
-## Cómo empezar y ejemplos
+## Cómo empezar
 
 Para utilizar esta biblioteca, simplemente:
 
 ```php
 require __DIR__ . '/vendor/autoload.php';
+
+use Josantonius\MimeType\MimeType;
+```
+
+Si la instalaste **manualmente**, utiliza:
+
+```php
+require_once __DIR__ . '/MimeType.php';
+require_once __DIR__ . '/MimeTypesCollection.php';
 
 use Josantonius\MimeType\MimeType;
 ```
@@ -162,10 +173,10 @@ Ejecutar todas las pruebas anteriores:
 
 ## ☑ Tareas pendientes
 
-- [ ] Añadir nueva funcionalidad
-- [ ] Mejorar pruebas
-- [ ] Mejorar documentación
-- [ ] Refactorizar código
+- [ ] Añadir nueva funcionalidad.
+- [ ] Mejorar pruebas.
+- [ ] Mejorar documentación.
+- [ ] Refactorizar código para las reglas de estilo de código deshabilitadas. Ver [phpmd.xml](phpmd.xml) y [.php_cs.dist](.php_cs.dist).
 
 ## Contribuir
 
@@ -182,6 +193,12 @@ Si deseas colaborar, puedes echar un vistazo a la lista de
 * Crea una nueva rama (**branch**), **commit**, **push** y envíame un
   [pull request](https://help.github.com/articles/using-pull-requests).
 
+**¡Gracias a quienes ya habéis contribuido a este proyecto!**
+
+[<img alt="vincent-guesnard" src="https://avatars3.githubusercontent.com/u/315173?v=4&s=117" height="117" width="117">](https://github.com/vincent-guesnard)|[<img alt="MASNathan" src="https://avatars0.githubusercontent.com/u/2139464?v=4&s=117" height="117" width="117">](https://github.com/MASNathan)
+:---:|:---:|
+[vincent-guesnard](https://github.com/vincent-guesnard)|[MASNathan](https://github.com/MASNathan)|
+
 ## Repositorio
 
 La estructura de archivos de este repositorio se creó con [PHP-Skeleton](https://github.com/Josantonius/PHP-Skeleton).
@@ -192,7 +209,7 @@ Este proyecto está licenciado bajo **licencia MIT**. Consulta el archivo [LICEN
 
 ## Copyright
 
-2016 - 2017 Josantonius, [josantonius.com](https://josantonius.com/)
+2016 - 2018 Josantonius, [josantonius.com](https://josantonius.com/)
 
 Si te ha resultado útil, házmelo saber :wink:
 

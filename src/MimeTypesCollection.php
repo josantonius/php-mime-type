@@ -2,11 +2,11 @@
 /**
  * PHP library for obtain headers MIME.
  *
- * @author     Josantonius - info@josantonius.com
- * @copyright  Copyright (c) 2016 - 2017
- * @license    https://opensource.org/licenses/MIT - The MIT License (MIT)
- * @link       https://github.com/Josantonius/PHP-MimeType
- * @since      1.0.0
+ * @author    Josantonius <hello@josantonius.com>
+ * @copyright 2016 - 2018 (c) Josantonius - PHP-MimeType
+ * @license   https://opensource.org/licenses/MIT - The MIT License (MIT)
+ * @link      https://github.com/Josantonius/PHP-MimeType
+ * @since     1.1.4
  */
 namespace Josantonius\MimeType;
 
@@ -14,16 +14,11 @@ namespace Josantonius\MimeType;
  * MIME types handler.
  *
  * Compiled from http://www.freeformatter.com/mime-types-list.html
- *
- *
- * @since 1.1.4
  */
 class MimeTypesCollection
 {
     /**
      * App instance.
-     *
-     * @since 1.1.4
      *
      * @var array
      */
@@ -717,8 +712,6 @@ class MimeTypesCollection
     /**
      * Returns all mime types.
      *
-     * @since 1.1.4
-     *
      * @return array
      */
     public static function all()
@@ -728,8 +721,6 @@ class MimeTypesCollection
 
     /**
      * Returns a mime type by extension.
-     *
-     * @since 1.1.4
      *
      * @param string $key
      *

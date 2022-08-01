@@ -44,9 +44,11 @@ You can also **clone the complete repository** with Git:
 
 Or **install it manually**:
 
-[Download MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php):
+Download [MimeType.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php) and [MimeTypesCollection.php](https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php):
 
     $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeType.php
+
+    $ wget https://raw.githubusercontent.com/Josantonius/PHP-MimeType/master/src/MimeTypesCollection.php
 
 ## Available Methods
 
@@ -98,6 +100,7 @@ Or If you installed it **manually**, use it:
 
 ```php
 require_once __DIR__ . '/MimeType.php';
+require_once __DIR__ . '/MimeTypesCollection.php';
 
 use Josantonius\MimeType\MimeType;
 ```
@@ -172,10 +175,10 @@ Run all previous tests:
 
 ## ☑ TODO
 
-- [ ] Add new feature
-- [ ] Improve tests
-- [ ] Improve documentation
-- [ ] Refactor code
+- [ ] Add new feature.
+- [ ] Improve tests.
+- [ ] Improve documentation.
+- [ ] Refactor code for disabled code style rules. See [phpmd.xml](phpmd.xml) and [.php_cs.dist](.php_cs.dist).
 
 ## Contribute
 
@@ -192,6 +195,12 @@ If you would like to help, please take a look at the list of
 * Create a **branch**, **commit**, **push** and send me a
   [pull request](https://help.github.com/articles/using-pull-requests).
 
+**Thank you to all the people who already contributed to this project!**
+
+[<img alt="vincent-guesnard" src="https://avatars3.githubusercontent.com/u/315173?v=4&s=117" height="117" width="117">](https://github.com/vincent-guesnard)|[<img alt="MASNathan" src="https://avatars0.githubusercontent.com/u/2139464?v=4&s=117" height="117" width="117">](https://github.com/MASNathan)
+:---:|:---:|
+[vincent-guesnard](https://github.com/vincent-guesnard)|[MASNathan](https://github.com/MASNathan)|
+
 ## Repository
 
 The file structure from this repository was created with [PHP-Skeleton](https://github.com/Josantonius/PHP-Skeleton).
@@ -202,7 +211,7 @@ This project is licensed under **MIT license**. See the [LICENSE](LICENSE) file 
 
 ## Copyright
 
-2016 - 2017 Josantonius, [josantonius.com](https://josantonius.com/)
+2016 - 2018 Josantonius, [josantonius.com](https://josantonius.com/)
 
 If you find it useful, let me know :wink:
 
