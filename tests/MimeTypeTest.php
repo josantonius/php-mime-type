@@ -61,19 +61,6 @@ class MimeTypeTest extends TestCase
     }
 
     /**
-     * Get MIME type from file extension.
-     */
-    public function testGetMimeFromExtension()
-    {
-        $mimeType = $this->MimeType;
-
-        $this->assertSame(
-            'text/html',
-            $mimeType::getMimeFromExtension('.html')
-        );
-    }
-
-    /**
      * Getting a MIME Type wrong.
      */
     public function testGetMimeFromExtensionUndefined()

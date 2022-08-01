@@ -716,7 +716,7 @@ class MimeTypesCollection
      */
     public static function all()
     {
-        return static::$data;
+        return self::$data;
     }
 
     /**
@@ -728,12 +728,12 @@ class MimeTypesCollection
      */
     public static function get($key)
     {
-        if (isset(static::$data[$key])) {
-            return static::$data[$key];
+        if (isset(self::$data[$key])) {
+            return self::$data[$key];
         }
 
-        if (isset(static::$data['.' . $key])) {
-            return static::$data['.' . $key];
+        if (isset(self::$data['.' . $key])) {
+            return self::$data['.' . $key];
         }
 
         return null;
