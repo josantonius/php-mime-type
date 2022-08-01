@@ -31,8 +31,6 @@ class MimeTypeTest extends TestCase
 
     public function testShouldGetAllMimeTypes(): void
     {
-        $mimeTypes = $this->mimeType->getAll();
-
         $this->assertNotEmpty($this->mimeType->getAll());
 
         $this->assertNotEmpty($this->collection->getAll());
