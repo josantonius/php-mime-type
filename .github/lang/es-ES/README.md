@@ -43,7 +43,8 @@ Para instalar **PHP MimeType library**, simplemente escribe:
 composer require josantonius/mime-type
 ```
 
-El comando anterior sólo instalará los archivos necesarios, si prefieres **descargar todo el código fuente** puedes utilizar:
+El comando anterior sólo instalará los archivos necesarios,
+si prefieres **descargar todo el código fuente** puedes utilizar:
 
 ```console
 composer require josantonius/mime-type --prefer-source
@@ -60,7 +61,7 @@ git clone https://github.com/josantonius/php-mime-type.git
 ### Obtener array con todos los tipos de MIME
 
 ```php
-$mimeType->getAll(): array
+$mimeType->all(): array
 ```
 
 ### Obtener extensión de archivo desde tipo de MIME
@@ -72,7 +73,7 @@ $mimeType->getExtension(string $mimeType): string|null
 ### Obtener tipo de MIME desde extensión de archivo
 
 ```php
-$mimeType->getMime($extension): string|null
+$mimeType->getMime(string $extension): string|null
 ```
 
 ## Cómo empezar
@@ -104,13 +105,13 @@ Ejemplo de uso para esta biblioteca:
 [Utilizando objetos](#utilizando-objetos):
 
 ```php
-$mimeType->getAll();
+$mimeType->all();
 ```
 
 [Utilizando la colección estática](#utilizando-colección-estática):
 
 ```php
-MimeTypeCollection::getAll();
+MimeTypeCollection::all();
 ```
 
 Resultado:

@@ -62,7 +62,7 @@ Available methods in this library:
 ### Get array with all MIME types
 
 ```php
-$mimeType->getAll(): array
+$mimeType->all(): array
 ```
 
 ### Get file extension from MIME type
@@ -74,7 +74,7 @@ $mimeType->getExtension(string $mimeType): string|null
 ### Get MIME type from file extension
 
 ```php
-$mimeType->getMime($extension): string|null
+$mimeType->getMime(string $extension): string|null
 ```
 
 ## Quick Start
@@ -106,13 +106,13 @@ Example of use for this library:
 [Using objects](#using-objects):
 
 ```php
-$mimeType->getAll();
+$mimeType->all();
 ```
 
 [Using the static collection](#using-static-collection):
 
 ```php
-MimeTypeCollection::getAll();
+MimeTypeCollection::all();
 ```
 
 Result:
