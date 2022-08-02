@@ -19,9 +19,9 @@ class MimeType
     /**
      * Get array with all MIME types.
      */
-    public function getAll(): array
+    public function all(): array
     {
-        return MimeTypeCollection::getAll();
+        return MimeTypeCollection::all();
     }
 
     /**

@@ -708,7 +708,7 @@ class MimeTypeCollection
     /**
      * Returns all mime types.
      */
-    public static function getAll(): array
+    public static function all(): array
     {
         return self::$data;
     }
