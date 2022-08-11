@@ -17,8 +17,9 @@ Biblioteca PHP para obtener encabezados MIME y extensiones a partir de ellos.
 
 - [Requisitos](#requisitos)
 - [Instalación](#instalación)
-- [Métodos disponibles](#métodos-disponibles)
-- [Cómo empezar](#cómo-empezar)
+- [Clases disponibles](#clases-disponibles)
+  - [MimeType](#mimetype)
+  - [MimeTypeCollection](#mimetypecollection)
 - [Uso](#uso)
 - [Tests](#tests)
 - [Tareas pendientes](#-tareas-pendientes)
@@ -56,61 +57,79 @@ También puedes **clonar el repositorio** completo con Git:
 git clone https://github.com/josantonius/php-mime-type.git
 ```
 
-## Métodos disponibles
+## Clases disponibles
 
-### Obtener array con todos los tipos de MIME
+### MimeType
+
+```php
+use Josantonius\MimeType\MimeType;
+```
+
+Crear objecto:
+
+```php
+$mimeType = new MimeType();
+```
+
+Obtener array con todos los tipos de MIME:
 
 ```php
 $mimeType->all(): array
 ```
 
-### Obtener extensión de archivo desde tipo de MIME
+Obtener extensión de archivo desde tipo de MIME:
 
 ```php
 $mimeType->getExtension(string $mimeType): string|null
 ```
 
-### Obtener tipo de MIME desde extensión de archivo
+Obtener tipo de MIME desde extensión de archivo:
 
 ```php
 $mimeType->getMime(string $extension): string|null
 ```
 
-## Cómo empezar
-
-Para utilizar esta biblioteca, simplemente:
-
-### Utilizando objetos
-
-```php
-use Josantonius\MimeType\MimeType;
-
-$mimeType = new MimeType();
-```
-
-### Utilizando colección estática
-
-Alternativamente puedes utilizar la colección para acceder a los métodos estáticamente:
+### MimeTypeCollection
 
 ```php
 use Josantonius\MimeType\MimeTypeCollection;
+```
+
+Obtener array con todos los tipos de MIME:
+
+```php
+MimeTypeCollection::all(): array
+```
+
+Obtener extensión de archivo desde tipo de MIME:
+
+```php
+MimeTypeCollection::getExtension(string $mimeType): string|null
+```
+
+Obtener tipo de MIME desde extensión de archivo:
+
+```php
+MimeTypeCollection::getMime(string $extension): string|null
 ```
 
 ## Uso
 
 Ejemplo de uso para esta biblioteca:
 
-### - Obtener array con todos los tipos de MIME
-
-[Utilizando objetos](#utilizando-objetos):
+### Obtener array con todos los tipos de MIME
 
 ```php
+use Josantonius\MimeType\MimeType;
+
+$mimeType = new MimeType();
+
 $mimeType->all();
 ```
 
-[Utilizando la colección estática](#utilizando-colección-estática):
-
 ```php
+use Josantonius\MimeType\MimeTypeCollection;
+
 MimeTypeCollection::all();
 ```
 
@@ -132,37 +151,39 @@ Resultado:
 ]
 ```
 
-### - Obtener extensión de archivo desde tipo de MIME
-
-[Utilizando objetos](#utilizando-objetos):
+### Obtener extensión de archivo desde tipo de MIME
 
 ```php
+use Josantonius\MimeType\MimeType;
+
+$mimeType = new MimeType();
+
 $mimeType->getExtension('text/html'); // .html
 ```
 
-[Utilizando la colección estática](#utilizando-colección-estática):
-
 ```php
+use Josantonius\MimeType\MimeTypeCollection;
+
 MimeTypeCollection::getExtension('application/zip'); // .zip
 ```
 
-### - Obtener tipo de MIME desde extensión de archivo
-
-[Utilizando objetos](#utilizando-objetos):
+### Obtener tipo de MIME desde extensión de archivo
 
 ```php
+use Josantonius\MimeType\MimeType;
+
+$mimeType = new MimeType();
+
 $mimeType->getMime('.tar'); // application/x-tar
-```
 
-The dot can be omitted:
+// El punto puede ser omitido:
 
-```php
 $mimeType->getMime('mp4'); // video/mp4
 ```
 
-[Utilizando la colección estática](#utilizando-colección-estática):
-
 ```php
+use Josantonius\MimeType\MimeTypeCollection;
+
 MimeTypeCollection::getMime('.json'); // application/json
 ```
 

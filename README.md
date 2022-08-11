@@ -17,8 +17,9 @@ PHP library to get MIME types from extensions.
 
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Available Methods](#available-methods)
-- [Quick Start](#quick-start)
+- [Available Classes](#available-classes)
+  - [MimeType](#mimetype)
+  - [MimeTypeCollection](#mimetypecollection)
 - [Usage](#usage)
 - [Tests](#tests)
 - [TODO](#todo)
@@ -43,7 +44,8 @@ To install **PHP MimeType library**, simply:
 composer require josantonius/mime-type
 ```
 
-The previous command will only install the necessary files, if you prefer to **download the entire source code** you can use:
+The previous command will only install the necessary files,
+if you prefer to **download the entire source code** you can use:
 
 ```console
 composer require josantonius/mime-type --prefer-source
@@ -55,63 +57,79 @@ You can also **clone the complete repository** with Git:
 git clone https://github.com/josantonius/php-mime-type.git
 ```
 
-## Available Methods
+## Available Classes
 
-Available methods in this library:
+### MimeType
 
-### Get array with all MIME types
+```php
+use Josantonius\MimeType\MimeType;
+```
+
+Create object:
+
+```php
+$mimeType = new MimeType();
+```
+
+Get array with all MIME types:
 
 ```php
 $mimeType->all(): array
 ```
 
-### Get file extension from MIME type
+Get file extension from MIME type:
 
 ```php
 $mimeType->getExtension(string $mimeType): string|null
 ```
 
-### Get MIME type from file extension
+Get MIME type from file extension:
 
 ```php
 $mimeType->getMime(string $extension): string|null
 ```
 
-## Quick Start
-
-To use this library:
-
-### Using Objects
-
-```php
-use Josantonius\MimeType\MimeType;
-
-$mimeType = new MimeType();
-```
-
-### Using Static Collection
-
-Alternatively you can use the collection to access the methods statically:
+### MimeTypeCollection
 
 ```php
 use Josantonius\MimeType\MimeTypeCollection;
+```
+
+Get array with all MIME types:
+
+```php
+MimeTypeCollection::all(): array
+```
+
+Get file extension from MIME type:
+
+```php
+MimeTypeCollection::getExtension(string $mimeType): string|null
+```
+
+Get MIME type from file extension:
+
+```php
+MimeTypeCollection::getMime(string $extension): string|null
 ```
 
 ## Usage
 
 Example of use for this library:
 
-### - Get array with all MIME types
-
-[Using objects](#using-objects):
+### Get array with all MIME types
 
 ```php
+use Josantonius\MimeType\MimeType;
+
+$mimeType = new MimeType();
+
 $mimeType->all();
 ```
 
-[Using the static collection](#using-static-collection):
-
 ```php
+use Josantonius\MimeType\MimeTypeCollection;
+
 MimeTypeCollection::all();
 ```
 
@@ -133,37 +151,39 @@ Result:
 ]
 ```
 
-### - Get file extension from MIME type
-
-[Using objects](#using-objects):
+### Get file extension from MIME type
 
 ```php
+use Josantonius\MimeType\MimeType;
+
+$mimeType = new MimeType();
+
 $mimeType->getExtension('text/html'); // .html
 ```
 
-[Using the static collection](#using-static-collection):
-
 ```php
+use Josantonius\MimeType\MimeTypeCollection;
+
 MimeTypeCollection::getExtension('application/zip'); // .zip
 ```
 
-### - Get MIME type from file extension
-
-[Using objects](#using-objects):
+### Get MIME type from file extension
 
 ```php
+use Josantonius\MimeType\MimeType;
+
+$mimeType = new MimeType();
+
 $mimeType->getMime('.tar'); // application/x-tar
-```
 
-The dot can be omitted:
+// The dot can be omitted:
 
-```php
 $mimeType->getMime('mp4'); // video/mp4
 ```
 
-[Using the static collection](#using-static-collection):
-
 ```php
+use Josantonius\MimeType\MimeTypeCollection;
+
 MimeTypeCollection::getMime('.json'); // application/json
 ```
 
