@@ -25,7 +25,7 @@ PHP library to get MIME types from extensions.
 - [TODO](#todo)
 - [Changelog](#changelog)
 - [Contribution](#contribution)
-- [Sponsor](#Sponsor)
+- [Sponsor](#sponsor)
 - [License](#license)
 
 ---
@@ -61,56 +61,46 @@ git clone https://github.com/josantonius/php-mime-type.git
 
 ### MimeType
 
-```php
-use Josantonius\MimeType\MimeType;
-```
-
-Create object:
-
-```php
-$mimeType = new MimeType();
-```
+`Josantonius\MimeType\MimeType`
 
 Get array with all MIME types:
 
 ```php
-$mimeType->all(): array
+public function all(): array;
 ```
 
 Get file extension from MIME type:
 
 ```php
-$mimeType->getExtension(string $mimeType): string|null
+public function getExtension(string $mimeType): string|null;
 ```
 
 Get MIME type from file extension:
 
 ```php
-$mimeType->getMime(string $extension): string|null
+public function getMime(string $extension): string|null;
 ```
 
 ### MimeTypeCollection
 
-```php
-use Josantonius\MimeType\MimeTypeCollection;
-```
+`Josantonius\MimeType\MimeTypeCollection`
 
 Get array with all MIME types:
 
 ```php
-MimeTypeCollection::all(): array
+public static function all(): array;
 ```
 
 Get file extension from MIME type:
 
 ```php
-MimeTypeCollection::getExtension(string $mimeType): string|null
+public static function getExtension(string $mimeType): string|null;
 ```
 
 Get MIME type from file extension:
 
 ```php
-MimeTypeCollection::getMime(string $extension): string|null
+public static function getMime(string $extension): string|null;
 ```
 
 ## Usage
