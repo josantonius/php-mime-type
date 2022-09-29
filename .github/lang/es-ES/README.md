@@ -22,7 +22,7 @@ Biblioteca PHP para obtener encabezados MIME y extensiones a partir de ellos.
   - [MimeTypeCollection](#mimetypecollection)
 - [Uso](#uso)
 - [Tests](#tests)
-- [Tareas pendientes](#-tareas-pendientes)
+- [Tareas pendientes](#tareas-pendientes)
 - [Registro de Cambios](#registro-de-cambios)
 - [Contribuir](#contribuir)
 - [Patrocinar](#patrocinar)
@@ -32,7 +32,9 @@ Biblioteca PHP para obtener encabezados MIME y extensiones a partir de ellos.
 
 ## Requisitos
 
-Esta biblioteca es compatible con las versiones de PHP: 8.0 | 8.1.
+- Sistema operativo: Linux | Windows.
+
+- Versiones de PHP: 8.0 | 8.1 | 8.2.
 
 ## Instalación
 
@@ -61,56 +63,46 @@ git clone https://github.com/josantonius/php-mime-type.git
 
 ### MimeType
 
-```php
-use Josantonius\MimeType\MimeType;
-```
-
-Crear objecto:
-
-```php
-$mimeType = new MimeType();
-```
+`Josantonius\MimeType\MimeType`
 
 Obtener array con todos los tipos de MIME:
 
 ```php
-$mimeType->all(): array
+public function all(): array;
 ```
 
 Obtener extensión de archivo desde tipo de MIME:
 
 ```php
-$mimeType->getExtension(string $mimeType): string|null
+public function getExtension(string $mimeType): string|null;
 ```
 
 Obtener tipo de MIME desde extensión de archivo:
 
 ```php
-$mimeType->getMime(string $extension): string|null
+public function getMime(string $extension): string|null;
 ```
 
 ### MimeTypeCollection
 
-```php
-use Josantonius\MimeType\MimeTypeCollection;
-```
+`Josantonius\MimeType\MimeTypeCollection`
 
 Obtener array con todos los tipos de MIME:
 
 ```php
-MimeTypeCollection::all(): array
+public static function all(): array;
 ```
 
 Obtener extensión de archivo desde tipo de MIME:
 
 ```php
-MimeTypeCollection::getExtension(string $mimeType): string|null
+public static function getExtension(string $mimeType): string|null;
 ```
 
 Obtener tipo de MIME desde extensión de archivo:
 
 ```php
-MimeTypeCollection::getMime(string $extension): string|null
+public static function getMime(string $extension): string|null;
 ```
 
 ## Uso
