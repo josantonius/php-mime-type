@@ -32,7 +32,9 @@ PHP library to get MIME types from extensions.
 
 ## Requirements
 
-This library is compatible with the PHP versions: 8.0 | 8.1.
+- Operating System: Linux | Windows.
+
+- PHP versions: 8.0 | 8.1 | 8.2.
 
 ## Installation
 

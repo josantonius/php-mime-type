@@ -32,7 +32,9 @@ Biblioteca PHP para obtener encabezados MIME y extensiones a partir de ellos.
 
 ## Requisitos
 
-Esta biblioteca es compatible con las versiones de PHP: 8.0 | 8.1.
+- Sistema operativo: Linux | Windows.
+
+- Versiones de PHP: 8.0 | 8.1 | 8.2.
 
 ## Instalación
 
