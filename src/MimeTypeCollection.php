@@ -272,6 +272,7 @@ class MimeTypeCollection
         '.jnlp' => 'application/x-java-jnlp-file',
         '.joda' => 'application/vnd.joost.joda-archive',
         '.jpeg' => 'image/jpeg',
+        '.jpg' => 'image/jpeg',
         '.jpgv' => 'video/jpeg',
         '.jpm' => 'video/jpm',
         '.js' => 'application/javascript',
