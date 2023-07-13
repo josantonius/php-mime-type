@@ -1,5 +1,17 @@
 # CHANGELOG
 
+## [v2.0.3](https://github.com/josantonius/php-mime-type/releases/tag/v2.0.3) (2023-07-13)
+
+> The original concept of my project, linking a single mimetype to a file extension, has been found to be insufficient in accurately reflecting the many-to-one relationships that exist in real-world use-cases. In practice, multiple file extensions often correspond to a single mimetype, rendering my existing design approach suboptimal.
+
+> Given these insights, I've decided to archive this repository. I recommend those interested to look at the approach taken by the repository [patrickmccallum/mimetype-io](https://github.com/patrickmccallum/mimetype-io/blob/master/src/mimeData.json). This project adopts a more nuanced perspective, effectively managing mimetypes by acknowledging the possibility of multiple extensions corresponding to a single mimetype. I believe this is a more promising approach for managing mimetypes moving forward.
+
+* Added MIME type by @scicali in
+[#13](https://github.com/josantonius/php-mime-type/pull/13).
+
+* Added MIME type by @derrickobedgiu1 in
+[#12](https://github.com/josantonius/php-mime-type/pull/12).
+
 ## [v2.0.2](https://github.com/josantonius/php-mime-type/releases/tag/v2.0.2) (2022-09-29)
 
 * The notation type in the test function names has been changed from camel to snake case for readability.

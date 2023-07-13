@@ -9,26 +9,11 @@
 [![PSR4](https://img.shields.io/badge/PSR-4-9b59b6.svg)](https://www.php-fig.org/psr/psr-4/)
 [![PSR12](https://img.shields.io/badge/PSR-12-1abc9c.svg)](https://www.php-fig.org/psr/psr-12/)
 
-**Translations**: [Español](.github/lang/es-ES/README.md)
-
 PHP library to get MIME types from extensions.
 
----
+> The original concept of my project, linking a single mimetype to a file extension, has been found to be insufficient in accurately reflecting the many-to-one relationships that exist in real-world use-cases. In practice, multiple file extensions often correspond to a single mimetype, rendering my existing design approach suboptimal.
 
-- [Requirements](#requirements)
-- [Installation](#installation)
-- [Available Classes](#available-classes)
-  - [MimeType](#mimetype)
-  - [MimeTypeCollection](#mimetypecollection)
-- [Usage](#usage)
-- [Tests](#tests)
-- [TODO](#todo)
-- [Changelog](#changelog)
-- [Contribution](#contribution)
-- [Sponsor](#sponsor)
-- [License](#license)
-
----
+> Given these insights, I've decided to archive this repository. I recommend those interested to look at the approach taken by the repository [patrickmccallum/mimetype-io](https://github.com/patrickmccallum/mimetype-io/blob/master/src/mimeData.json). This project adopts a more nuanced perspective, effectively managing mimetypes by acknowledging the possibility of multiple extensions corresponding to a single mimetype. I believe this is a more promising approach for managing mimetypes moving forward.
 
 ## Requirements
 
@@ -249,4 +234,4 @@ If this project helps you to reduce your development time,
 
 This repository is licensed under the [MIT License](LICENSE).
 
-Copyright © 2016-present, [Josantonius](https://github.com/josantonius#contact)
+Copyright © 2016-2023, [Josantonius](https://github.com/josantonius#contact)
